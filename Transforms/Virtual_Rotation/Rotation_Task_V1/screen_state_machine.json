@@ -1,0 +1,2627 @@
+{
+     "states": {
+          "Blank": {
+               "py/object": "state_node.State",
+               "name": "Blank",
+               "drawlayer": 40,
+               "pos_x": 139.0,
+               "pos_y": 217.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Blank": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Blank",
+                         "to_state": "Blank",
+                         "name": "0_b2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   244.0,
+                                   51.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   209.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 382704,
+                         "arrow": 382706,
+                         "circle": 382705,
+                         "name_text": 382707,
+                         "is_a_self_transition": true
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Blank",
+                         "to_state": "Show_TTM_Still",
+                         "name": "1_b2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "p2": [
+                              425.0,
+                              184.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 383096,
+                         "arrow": 383098,
+                         "circle": 383097,
+                         "name_text": 383099,
+                         "is_a_self_transition": false
+                    }
+               },
+               "transitions_to_here": {
+                    "Blank": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Blank",
+                         "to_state": "Blank",
+                         "name": "0_b2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   244.0,
+                                   51.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   209.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 382704,
+                         "arrow": 382706,
+                         "circle": 382705,
+                         "name_text": 382707,
+                         "is_a_self_transition": true
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Blank",
+                         "name": "2_still2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              364.0,
+                              315.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 383536,
+                         "arrow": 383538,
+                         "circle": 383537,
+                         "name_text": 383539,
+                         "is_a_self_transition": false
+                    },
+                    "Show_Cue": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_Cue",
+                         "to_state": "Blank",
+                         "name": "5_c2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   555.0,
+                                   53.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 382712,
+                         "arrow": 382714,
+                         "circle": 382713,
+                         "name_text": 382715,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Move_CW",
+                              "drawlayer": 40,
+                              "pos_x": 848.0,
+                              "pos_y": 830.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Move_CW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Move_CW",
+                                        "to_state": "Move_CW",
+                                        "name": "11_mcw2mcw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  1053.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 243504,
+                                        "arrow": 243506,
+                                        "circle": 243505,
+                                        "name_text": 243507,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Show_TTM_Still": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Move_CW",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "8_cw2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             637.0,
+                                             624.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 611097,
+                                        "arrow": 611099,
+                                        "circle": 611098,
+                                        "name_text": 611100,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Show_Cue": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                                        "to_state": "Show_Cue",
+                                        "name": "12_mcw2c",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  1001.0,
+                                                  466.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  1013.0,
+                                                  277.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 245928,
+                                        "arrow": 245930,
+                                        "circle": 245929,
+                                        "name_text": 245931,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Blank": "<transition.Transition object at 0x0000022B977F6730>",
+                                   "Move_CCW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                                        "to_state": "Move_CCW",
+                                        "name": "18_mcw2mccw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             595.0,
+                                             693.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 610769,
+                                        "arrow": 610771,
+                                        "circle": 610770,
+                                        "name_text": 610772,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "transitions_to_here": {
+                                   "Move_CW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Move_CW",
+                                        "to_state": "Move_CW",
+                                        "name": "11_mcw2mcw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  1053.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 243504,
+                                        "arrow": 243506,
+                                        "circle": 243505,
+                                        "name_text": 243507,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Show_TTM_Still": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Show_TTM_Still",
+                                        "to_state": "Move_CW",
+                                        "name": "7_still2mcw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  820.0,
+                                                  468.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 243508,
+                                        "arrow": 243510,
+                                        "circle": 243509,
+                                        "name_text": 243511,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CCW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": {
+                                             "py/object": "state_node.State",
+                                             "name": "Move_CCW",
+                                             "drawlayer": 40,
+                                             "pos_x": 385.0,
+                                             "pos_y": 641.0,
+                                             "selected": false,
+                                             "transitions_from_here": {
+                                                  "Move_CCW": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Move_CCW",
+                                                       "to_state": "Move_CCW",
+                                                       "name": "13_ccw2ccw",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            365.0,
+                                                            461.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 455.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 386588,
+                                                       "arrow": 386590,
+                                                       "circle": 386589,
+                                                       "name_text": 386591,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Show_TTM_Still": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                                       "to_state": "Show_TTM_Still",
+                                                       "name": "16_mccw2still",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            457.0,
+                                                            419.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 384100,
+                                                       "arrow": 384102,
+                                                       "circle": 384101,
+                                                       "name_text": 384103,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Show_Cue": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                                       "to_state": "Show_Cue",
+                                                       "name": "17_mccw2c",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            697.0,
+                                                            537.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 1013.0,
+                                                                 277.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 535755,
+                                                       "arrow": 535757,
+                                                       "circle": 535756,
+                                                       "name_text": 535758,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Move_CW": "<transition.Transition object at 0x0000022B9895E370>",
+                                                  "Blank": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                                       "to_state": "Blank",
+                                                       "name": "20_mccw2b",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            198.0,
+                                                            457.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 139.0,
+                                                                 217.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 798203,
+                                                       "arrow": 798205,
+                                                       "circle": 798204,
+                                                       "name_text": 798206,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "transitions_to_here": {
+                                                  "Move_CCW": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Move_CCW",
+                                                       "to_state": "Move_CCW",
+                                                       "name": "13_ccw2ccw",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            365.0,
+                                                            461.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 455.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 386588,
+                                                       "arrow": 386590,
+                                                       "circle": 386589,
+                                                       "name_text": 386591,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Show_TTM_Still": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": {
+                                                            "py/object": "state_node.State",
+                                                            "name": "Show_TTM_Still",
+                                                            "drawlayer": 40,
+                                                            "pos_x": 619.0,
+                                                            "pos_y": 295.0,
+                                                            "selected": false,
+                                                            "transitions_from_here": {
+                                                                 "Show_TTM_Still": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Show_TTM_Still",
+                                                                      "to_state": "Show_TTM_Still",
+                                                                      "name": "3_stiil2still",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           772.0,
+                                                                           114.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                689.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 101737,
+                                                                      "arrow": 101739,
+                                                                      "circle": 101738,
+                                                                      "name_text": 101740,
+                                                                      "is_a_self_transition": true
+                                                                 },
+                                                                 "Blank": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Show_TTM_Still",
+                                                                      "to_state": "Blank",
+                                                                      "name": "2_still2b",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           364.0,
+                                                                           315.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                139.0,
+                                                                                217.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 383536,
+                                                                      "arrow": 383538,
+                                                                      "circle": 383537,
+                                                                      "name_text": 383539,
+                                                                      "is_a_self_transition": false
+                                                                 },
+                                                                 "Show_Cue": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Show_TTM_Still",
+                                                                      "to_state": "Show_Cue",
+                                                                      "name": "4_still2c",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           815.0,
+                                                                           335.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                1013.0,
+                                                                                277.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 383724,
+                                                                      "arrow": 383726,
+                                                                      "circle": 383725,
+                                                                      "name_text": 383727,
+                                                                      "is_a_self_transition": false
+                                                                 },
+                                                                 "Move_CW": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Show_TTM_Still",
+                                                                      "to_state": "Move_CW",
+                                                                      "name": "7_still2mcw",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": {
+                                                                           "py/tuple": [
+                                                                                820.0,
+                                                                                468.0
+                                                                           ]
+                                                                      },
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                848.0,
+                                                                                830.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 243508,
+                                                                      "arrow": 243510,
+                                                                      "circle": 243509,
+                                                                      "name_text": 243511,
+                                                                      "is_a_self_transition": false
+                                                                 },
+                                                                 "Move_CCW": "<transition.Transition object at 0x0000022B9895EE50>"
+                                                            },
+                                                            "transitions_to_here": {
+                                                                 "Show_TTM_Still": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Show_TTM_Still",
+                                                                      "to_state": "Show_TTM_Still",
+                                                                      "name": "3_stiil2still",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           772.0,
+                                                                           114.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                689.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 101737,
+                                                                      "arrow": 101739,
+                                                                      "circle": 101738,
+                                                                      "name_text": 101740,
+                                                                      "is_a_self_transition": true
+                                                                 },
+                                                                 "Blank": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Blank",
+                                                                      "to_state": "Show_TTM_Still",
+                                                                      "name": "1_b2still",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                139.0,
+                                                                                217.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           425.0,
+                                                                           184.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 383096,
+                                                                      "arrow": 383098,
+                                                                      "circle": 383097,
+                                                                      "name_text": 383099,
+                                                                      "is_a_self_transition": false
+                                                                 },
+                                                                 "Move_CW": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "Move_CW",
+                                                                      "to_state": "Show_TTM_Still",
+                                                                      "name": "8_cw2still",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                848.0,
+                                                                                830.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           637.0,
+                                                                           624.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 611097,
+                                                                      "arrow": 611099,
+                                                                      "circle": 611098,
+                                                                      "name_text": 611100,
+                                                                      "is_a_self_transition": false
+                                                                 },
+                                                                 "Move_CCW": {
+                                                                      "py/object": "transition.Transition",
+                                                                      "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                                                      "to_state": "Show_TTM_Still",
+                                                                      "name": "16_mccw2still",
+                                                                      "drawlayer": 39,
+                                                                      "item_handler_registry": "widget handler",
+                                                                      "p1": {
+                                                                           "py/tuple": [
+                                                                                385.0,
+                                                                                641.0
+                                                                           ]
+                                                                      },
+                                                                      "p2": [
+                                                                           457.0,
+                                                                           419.0
+                                                                      ],
+                                                                      "p3": {
+                                                                           "py/tuple": [
+                                                                                619.0,
+                                                                                295.0
+                                                                           ]
+                                                                      },
+                                                                      "selected": false,
+                                                                      "bezier": 384100,
+                                                                      "arrow": 384102,
+                                                                      "circle": 384101,
+                                                                      "name_text": 384103,
+                                                                      "is_a_self_transition": false
+                                                                 }
+                                                            },
+                                                            "is_initial": false,
+                                                            "ellipse_id": 53,
+                                                            "label_id": 54
+                                                       },
+                                                       "to_state": "Move_CCW",
+                                                       "name": "15_still2mccw",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            548.0,
+                                                            506.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 385896,
+                                                       "arrow": 385898,
+                                                       "circle": 385897,
+                                                       "name_text": 385899,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Move_CW": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                                                       "to_state": "Move_CCW",
+                                                       "name": "18_mcw2mccw",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 848.0,
+                                                                 830.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            595.0,
+                                                            693.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 610769,
+                                                       "arrow": 610771,
+                                                       "circle": 610770,
+                                                       "name_text": 610772,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "is_initial": false,
+                                             "ellipse_id": 247438,
+                                             "label_id": 247439
+                                        },
+                                        "to_state": "Move_CW",
+                                        "name": "19_mccw2mcw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             549.0,
+                                             781.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 680525,
+                                        "arrow": 680527,
+                                        "circle": 680526,
+                                        "name_text": 680528,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 243486,
+                              "label_id": 243487
+                         },
+                         "to_state": "Blank",
+                         "name": "14_mcw2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": [
+                              18.0,
+                              907.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 680717,
+                         "arrow": 680719,
+                         "circle": 680718,
+                         "name_text": 680720,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                         "to_state": "Blank",
+                         "name": "20_mccw2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              198.0,
+                              457.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 798203,
+                         "arrow": 798205,
+                         "circle": 798204,
+                         "name_text": 798206,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": true,
+               "ellipse_id": 382694,
+               "label_id": 382695
+          },
+          "Show_TTM_Still": {
+               "py/object": "state_node.State",
+               "name": "Show_TTM_Still",
+               "drawlayer": 40,
+               "pos_x": 619.0,
+               "pos_y": 295.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Show_TTM_Still",
+                         "name": "3_stiil2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              772.0,
+                              114.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   689.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 101737,
+                         "arrow": 101739,
+                         "circle": 101738,
+                         "name_text": 101740,
+                         "is_a_self_transition": true
+                    },
+                    "Blank": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Blank",
+                         "name": "2_still2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              364.0,
+                              315.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 383536,
+                         "arrow": 383538,
+                         "circle": 383537,
+                         "name_text": 383539,
+                         "is_a_self_transition": false
+                    },
+                    "Show_Cue": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Show_Cue",
+                         "name": "4_still2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              815.0,
+                              335.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 383724,
+                         "arrow": 383726,
+                         "circle": 383725,
+                         "name_text": 383727,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Move_CW",
+                         "name": "7_still2mcw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   820.0,
+                                   468.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 243508,
+                         "arrow": 243510,
+                         "circle": 243509,
+                         "name_text": 243511,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CCW": "<transition.Transition object at 0x0000022B9895EE50>"
+               },
+               "transitions_to_here": {
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Show_TTM_Still",
+                         "name": "3_stiil2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              772.0,
+                              114.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   689.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 101737,
+                         "arrow": 101739,
+                         "circle": 101738,
+                         "name_text": 101740,
+                         "is_a_self_transition": true
+                    },
+                    "Blank": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Blank",
+                         "to_state": "Show_TTM_Still",
+                         "name": "1_b2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "p2": [
+                              425.0,
+                              184.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 383096,
+                         "arrow": 383098,
+                         "circle": 383097,
+                         "name_text": 383099,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Move_CW",
+                         "to_state": "Show_TTM_Still",
+                         "name": "8_cw2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": [
+                              637.0,
+                              624.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 611097,
+                         "arrow": 611099,
+                         "circle": 611098,
+                         "name_text": 611100,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                         "to_state": "Show_TTM_Still",
+                         "name": "16_mccw2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              457.0,
+                              419.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 384100,
+                         "arrow": 384102,
+                         "circle": 384101,
+                         "name_text": 384103,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 53,
+               "label_id": 54
+          },
+          "Show_Cue": {
+               "py/object": "state_node.State",
+               "name": "Show_Cue",
+               "drawlayer": 40,
+               "pos_x": 1013.0,
+               "pos_y": 277.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Show_Cue": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_Cue",
+                         "to_state": "Show_Cue",
+                         "name": "6_c2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   1051.0,
+                                   78.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   1083.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 245920,
+                         "arrow": 245922,
+                         "circle": 245921,
+                         "name_text": 245923,
+                         "is_a_self_transition": true
+                    },
+                    "Blank": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_Cue",
+                         "to_state": "Blank",
+                         "name": "5_c2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   555.0,
+                                   53.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 382712,
+                         "arrow": 382714,
+                         "circle": 382713,
+                         "name_text": 382715,
+                         "is_a_self_transition": false
+                    }
+               },
+               "transitions_to_here": {
+                    "Show_Cue": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_Cue",
+                         "to_state": "Show_Cue",
+                         "name": "6_c2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   1051.0,
+                                   78.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   1083.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 245920,
+                         "arrow": 245922,
+                         "circle": 245921,
+                         "name_text": 245923,
+                         "is_a_self_transition": true
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Show_Cue",
+                         "name": "4_still2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              815.0,
+                              335.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 383724,
+                         "arrow": 383726,
+                         "circle": 383725,
+                         "name_text": 383727,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                         "to_state": "Show_Cue",
+                         "name": "12_mcw2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   1001.0,
+                                   466.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 245928,
+                         "arrow": 245930,
+                         "circle": 245929,
+                         "name_text": 245931,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                         "to_state": "Show_Cue",
+                         "name": "17_mccw2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              697.0,
+                              537.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 535755,
+                         "arrow": 535757,
+                         "circle": 535756,
+                         "name_text": 535758,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 245910,
+               "label_id": 245911
+          },
+          "Move_CW": {
+               "py/object": "state_node.State",
+               "name": "Move_CW",
+               "drawlayer": 40,
+               "pos_x": 848.0,
+               "pos_y": 830.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Move_CW",
+                         "to_state": "Move_CW",
+                         "name": "11_mcw2mcw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   1053.0,
+                                   667.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 243504,
+                         "arrow": 243506,
+                         "circle": 243505,
+                         "name_text": 243507,
+                         "is_a_self_transition": false
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Move_CW",
+                         "to_state": "Show_TTM_Still",
+                         "name": "8_cw2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": [
+                              637.0,
+                              624.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 611097,
+                         "arrow": 611099,
+                         "circle": 611098,
+                         "name_text": 611100,
+                         "is_a_self_transition": false
+                    },
+                    "Show_Cue": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                         "to_state": "Show_Cue",
+                         "name": "12_mcw2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   1001.0,
+                                   466.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 245928,
+                         "arrow": 245930,
+                         "circle": 245929,
+                         "name_text": 245931,
+                         "is_a_self_transition": false
+                    },
+                    "Blank": "<transition.Transition object at 0x0000022B977F6730>",
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                         "to_state": "Move_CCW",
+                         "name": "18_mcw2mccw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": [
+                              595.0,
+                              693.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 610769,
+                         "arrow": 610771,
+                         "circle": 610770,
+                         "name_text": 610772,
+                         "is_a_self_transition": false
+                    }
+               },
+               "transitions_to_here": {
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Move_CW",
+                         "to_state": "Move_CW",
+                         "name": "11_mcw2mcw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   1053.0,
+                                   667.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 243504,
+                         "arrow": 243506,
+                         "circle": 243505,
+                         "name_text": 243507,
+                         "is_a_self_transition": false
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Show_TTM_Still",
+                         "to_state": "Move_CW",
+                         "name": "7_still2mcw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   820.0,
+                                   468.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 243508,
+                         "arrow": 243510,
+                         "circle": 243509,
+                         "name_text": 243511,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Move_CCW",
+                              "drawlayer": 40,
+                              "pos_x": 385.0,
+                              "pos_y": 641.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Move_CCW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Move_CCW",
+                                        "to_state": "Move_CCW",
+                                        "name": "13_ccw2ccw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             365.0,
+                                             461.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  455.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 386588,
+                                        "arrow": 386590,
+                                        "circle": 386589,
+                                        "name_text": 386591,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Show_TTM_Still": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "16_mccw2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             457.0,
+                                             419.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 384100,
+                                        "arrow": 384102,
+                                        "circle": 384101,
+                                        "name_text": 384103,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Show_Cue": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                        "to_state": "Show_Cue",
+                                        "name": "17_mccw2c",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             697.0,
+                                             537.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  1013.0,
+                                                  277.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 535755,
+                                        "arrow": 535757,
+                                        "circle": 535756,
+                                        "name_text": 535758,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CW": "<transition.Transition object at 0x0000022B9895E370>",
+                                   "Blank": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                        "to_state": "Blank",
+                                        "name": "20_mccw2b",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             198.0,
+                                             457.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  139.0,
+                                                  217.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 798203,
+                                        "arrow": 798205,
+                                        "circle": 798204,
+                                        "name_text": 798206,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "transitions_to_here": {
+                                   "Move_CCW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Move_CCW",
+                                        "to_state": "Move_CCW",
+                                        "name": "13_ccw2ccw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             365.0,
+                                             461.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  455.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 386588,
+                                        "arrow": 386590,
+                                        "circle": 386589,
+                                        "name_text": 386591,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Show_TTM_Still": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": {
+                                             "py/object": "state_node.State",
+                                             "name": "Show_TTM_Still",
+                                             "drawlayer": 40,
+                                             "pos_x": 619.0,
+                                             "pos_y": 295.0,
+                                             "selected": false,
+                                             "transitions_from_here": {
+                                                  "Show_TTM_Still": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Show_TTM_Still",
+                                                       "to_state": "Show_TTM_Still",
+                                                       "name": "3_stiil2still",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            772.0,
+                                                            114.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 689.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 101737,
+                                                       "arrow": 101739,
+                                                       "circle": 101738,
+                                                       "name_text": 101740,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Blank": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Show_TTM_Still",
+                                                       "to_state": "Blank",
+                                                       "name": "2_still2b",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            364.0,
+                                                            315.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 139.0,
+                                                                 217.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 383536,
+                                                       "arrow": 383538,
+                                                       "circle": 383537,
+                                                       "name_text": 383539,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Show_Cue": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Show_TTM_Still",
+                                                       "to_state": "Show_Cue",
+                                                       "name": "4_still2c",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            815.0,
+                                                            335.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 1013.0,
+                                                                 277.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 383724,
+                                                       "arrow": 383726,
+                                                       "circle": 383725,
+                                                       "name_text": 383727,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Move_CW": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Show_TTM_Still",
+                                                       "to_state": "Move_CW",
+                                                       "name": "7_still2mcw",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 820.0,
+                                                                 468.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 848.0,
+                                                                 830.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 243508,
+                                                       "arrow": 243510,
+                                                       "circle": 243509,
+                                                       "name_text": 243511,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Move_CCW": "<transition.Transition object at 0x0000022B9895EE50>"
+                                             },
+                                             "transitions_to_here": {
+                                                  "Show_TTM_Still": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Show_TTM_Still",
+                                                       "to_state": "Show_TTM_Still",
+                                                       "name": "3_stiil2still",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            772.0,
+                                                            114.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 689.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 101737,
+                                                       "arrow": 101739,
+                                                       "circle": 101738,
+                                                       "name_text": 101740,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Blank": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Blank",
+                                                       "to_state": "Show_TTM_Still",
+                                                       "name": "1_b2still",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 139.0,
+                                                                 217.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            425.0,
+                                                            184.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 383096,
+                                                       "arrow": 383098,
+                                                       "circle": 383097,
+                                                       "name_text": 383099,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Move_CW": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Move_CW",
+                                                       "to_state": "Show_TTM_Still",
+                                                       "name": "8_cw2still",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 848.0,
+                                                                 830.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            637.0,
+                                                            624.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 611097,
+                                                       "arrow": 611099,
+                                                       "circle": 611098,
+                                                       "name_text": 611100,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Move_CCW": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                                       "to_state": "Show_TTM_Still",
+                                                       "name": "16_mccw2still",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 385.0,
+                                                                 641.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            457.0,
+                                                            419.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 619.0,
+                                                                 295.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 384100,
+                                                       "arrow": 384102,
+                                                       "circle": 384101,
+                                                       "name_text": 384103,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "is_initial": false,
+                                             "ellipse_id": 53,
+                                             "label_id": 54
+                                        },
+                                        "to_state": "Move_CCW",
+                                        "name": "15_still2mccw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             548.0,
+                                             506.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 385896,
+                                        "arrow": 385898,
+                                        "circle": 385897,
+                                        "name_text": 385899,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                                        "to_state": "Move_CCW",
+                                        "name": "18_mcw2mccw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             595.0,
+                                             693.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 610769,
+                                        "arrow": 610771,
+                                        "circle": 610770,
+                                        "name_text": 610772,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 247438,
+                              "label_id": 247439
+                         },
+                         "to_state": "Move_CW",
+                         "name": "19_mccw2mcw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              549.0,
+                              781.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 680525,
+                         "arrow": 680527,
+                         "circle": 680526,
+                         "name_text": 680528,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 243486,
+               "label_id": 243487
+          },
+          "Move_CCW": {
+               "py/object": "state_node.State",
+               "name": "Move_CCW",
+               "drawlayer": 40,
+               "pos_x": 385.0,
+               "pos_y": 641.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Move_CCW",
+                         "to_state": "Move_CCW",
+                         "name": "13_ccw2ccw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              365.0,
+                              461.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   455.0,
+                                   641.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 386588,
+                         "arrow": 386590,
+                         "circle": 386589,
+                         "name_text": 386591,
+                         "is_a_self_transition": true
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                         "to_state": "Show_TTM_Still",
+                         "name": "16_mccw2still",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              457.0,
+                              419.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 384100,
+                         "arrow": 384102,
+                         "circle": 384101,
+                         "name_text": 384103,
+                         "is_a_self_transition": false
+                    },
+                    "Show_Cue": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                         "to_state": "Show_Cue",
+                         "name": "17_mccw2c",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              697.0,
+                              537.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   1013.0,
+                                   277.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 535755,
+                         "arrow": 535757,
+                         "circle": 535756,
+                         "name_text": 535758,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CW": "<transition.Transition object at 0x0000022B9895E370>",
+                    "Blank": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                         "to_state": "Blank",
+                         "name": "20_mccw2b",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              198.0,
+                              457.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   139.0,
+                                   217.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 798203,
+                         "arrow": 798205,
+                         "circle": 798204,
+                         "name_text": 798206,
+                         "is_a_self_transition": false
+                    }
+               },
+               "transitions_to_here": {
+                    "Move_CCW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Move_CCW",
+                         "to_state": "Move_CCW",
+                         "name": "13_ccw2ccw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "p2": [
+                              365.0,
+                              461.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   455.0,
+                                   641.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 386588,
+                         "arrow": 386590,
+                         "circle": 386589,
+                         "name_text": 386591,
+                         "is_a_self_transition": true
+                    },
+                    "Show_TTM_Still": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Show_TTM_Still",
+                              "drawlayer": 40,
+                              "pos_x": 619.0,
+                              "pos_y": 295.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Show_TTM_Still": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Show_TTM_Still",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "3_stiil2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             772.0,
+                                             114.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  689.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 101737,
+                                        "arrow": 101739,
+                                        "circle": 101738,
+                                        "name_text": 101740,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Blank": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Show_TTM_Still",
+                                        "to_state": "Blank",
+                                        "name": "2_still2b",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             364.0,
+                                             315.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  139.0,
+                                                  217.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 383536,
+                                        "arrow": 383538,
+                                        "circle": 383537,
+                                        "name_text": 383539,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Show_Cue": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Show_TTM_Still",
+                                        "to_state": "Show_Cue",
+                                        "name": "4_still2c",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             815.0,
+                                             335.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  1013.0,
+                                                  277.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 383724,
+                                        "arrow": 383726,
+                                        "circle": 383725,
+                                        "name_text": 383727,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Show_TTM_Still",
+                                        "to_state": "Move_CW",
+                                        "name": "7_still2mcw",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  820.0,
+                                                  468.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 243508,
+                                        "arrow": 243510,
+                                        "circle": 243509,
+                                        "name_text": 243511,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CCW": "<transition.Transition object at 0x0000022B9895EE50>"
+                              },
+                              "transitions_to_here": {
+                                   "Show_TTM_Still": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Show_TTM_Still",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "3_stiil2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             772.0,
+                                             114.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  689.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 101737,
+                                        "arrow": 101739,
+                                        "circle": 101738,
+                                        "name_text": 101740,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Blank": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Blank",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "1_b2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  139.0,
+                                                  217.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             425.0,
+                                             184.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 383096,
+                                        "arrow": 383098,
+                                        "circle": 383097,
+                                        "name_text": 383099,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Move_CW",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "8_cw2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  848.0,
+                                                  830.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             637.0,
+                                             624.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 611097,
+                                        "arrow": 611099,
+                                        "circle": 611098,
+                                        "name_text": 611100,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Move_CCW": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x0000022B989DE910>",
+                                        "to_state": "Show_TTM_Still",
+                                        "name": "16_mccw2still",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  385.0,
+                                                  641.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             457.0,
+                                             419.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  619.0,
+                                                  295.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 384100,
+                                        "arrow": 384102,
+                                        "circle": 384101,
+                                        "name_text": 384103,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 53,
+                              "label_id": 54
+                         },
+                         "to_state": "Move_CCW",
+                         "name": "15_still2mccw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   619.0,
+                                   295.0
+                              ]
+                         },
+                         "p2": [
+                              548.0,
+                              506.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 385896,
+                         "arrow": 385898,
+                         "circle": 385897,
+                         "name_text": 385899,
+                         "is_a_self_transition": false
+                    },
+                    "Move_CW": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x0000022B977F6310>",
+                         "to_state": "Move_CCW",
+                         "name": "18_mcw2mccw",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   848.0,
+                                   830.0
+                              ]
+                         },
+                         "p2": [
+                              595.0,
+                              693.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   385.0,
+                                   641.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 610769,
+                         "arrow": 610771,
+                         "circle": 610770,
+                         "name_text": 610772,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 247438,
+               "label_id": 247439
+          }
+     },
+     "state_variables": [
+          "target_angle",
+          "trap_angle",
+          "manip_angle",
+          "command_to_screen",
+          "speed",
+          "angle_dif_between_man_and_target_trap"
+     ],
+     "input_variables_text": "action",
+     "state_variable_constructor": [
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+     ]
+}
