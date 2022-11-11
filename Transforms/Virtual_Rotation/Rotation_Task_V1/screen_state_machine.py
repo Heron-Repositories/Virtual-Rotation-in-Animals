@@ -1,10 +1,8 @@
-
 import numpy as np
 from statemachine import StateMachine, State
 
 
 class ScreenFSM(StateMachine):
-
     # Start States
     state_Blank = State("Blank", initial=True)
     state_Show_TTM_Still = State("Show_TTM_Still", initial=False)
@@ -35,10 +33,11 @@ class ScreenFSM(StateMachine):
     trans_18_mcw2mccw = state_Move_CW.to(state_Move_CCW)
     trans_19_mccw2mcw = state_Move_CCW.to(state_Move_CW)
     trans_20_mccw2b = state_Move_CCW.to(state_Blank)
+
     # End Transitions
 
     def __init__(self, target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap):
-        super().__init__(StateMachine)
+        super().__init__()
         # Start State Variables
         self.target_angle = target_angle
         self.trap_angle = trap_angle
@@ -51,7 +50,6 @@ class ScreenFSM(StateMachine):
         # End State Variables
 
     def step(self, action):
-        print(action)
         if False:
             pass
 
@@ -97,7 +95,7 @@ class ScreenFSM(StateMachine):
                 self.trans_10_cw2b(action)
             elif action == 'move_cw':
                 self.trans_11_mcw2mcw(action)
-                
+
             elif action == 'show_cue':
                 self.trans_12_mcw2c(action)
             elif action == 'blank':
@@ -126,13 +124,15 @@ class ScreenFSM(StateMachine):
         self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
 
     def on_trans_3_stiil2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
 
     def on_trans_6_c2c(self, action):
         self.command_to_screen = 'Ignore'
-        
+
     def on_trans_1_b2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
 
     def on_trans_2_still2b(self, action):
         self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
@@ -145,66 +145,78 @@ class ScreenFSM(StateMachine):
 
     def on_trans_7_still2mcw(self, action):
         self.manip_angle -= self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+        self.check_manip_and_rezero()
 
     def on_trans_8_cw2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+
     def on_trans_9_mcw2c(self, action):
         self.command_to_screen = 'Cue=1, Manipulandum=0, Target=0, Trap=0'
 
     def on_trans_10_cw2b(self, action):
         self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
-    
+
     def on_trans_11_mcw2mcw(self, action):
         self.manip_angle -= self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+        self.check_manip_and_rezero()
 
     def on_trans_12_mcw2c(self, action):
         self.command_to_screen = 'Cue=1, Manipulandum=0, Target=0, Trap=0'
 
     def on_trans_13_ccw2ccw(self, action):
         self.manip_angle += self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+        self.check_manip_and_rezero()
 
     def on_trans_14_mcw2b(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'      
+        self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
 
     def on_trans_15_still2mccw(self, action):
         self.manip_angle += self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+        self.check_manip_and_rezero()
 
     def on_trans_16_mccw2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-       
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
 
     def on_trans_17_mccw2c(self, action):
         self.command_to_screen = 'Cue=1, Manipulandum=0, Target=0, Trap=0'
 
     def on_trans_18_mcw2mccw(self, action):
         self.manip_angle += self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+        self.check_manip_and_rezero()
 
     def on_trans_19_mccw2mcw(self, action):
         self.manip_angle -= self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle, self.target_angle, self.trap_angle)
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+                                                                                     self.target_angle, self.trap_angle)
+        self.check_manip_and_rezero()
 
     def on_trans_20_mccw2b(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'       
+        self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
 
-    # End transition callbacks
+        # End transition callbacks
+
+    def check_manip_and_rezero(self):
+        self.target_reached = self.has_man_reached_target()
+        self.trap_reached = self.has_man_reached_trap()
+        self.rezero_angle()
+
+    def rezero_angle(self):
+        if self.manip_angle < 0:
+            self.manip_angle = 360 + self.manip_angle
+        if self.manip_angle > 359:
+            self.manip_angle = self.manip_angle - 359
 
     def has_man_reached_target(self):
         man_pos = self.manip_angle
