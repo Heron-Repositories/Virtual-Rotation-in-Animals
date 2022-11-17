@@ -17,6 +17,8 @@ class WaitToMatchTask(StateMachine):
     trans_1_s2p = state_Wait_to_Start.to(state_Wait_in_Poke)
     trans_3_p2suc = state_Wait_in_Poke.to(state_Success)
     trans_4_p2f = state_Wait_in_Poke.to(state_Fail)
+    trans_5_s2ws = state_Success.to(state_Wait_to_Start)
+    trans_6_f2ws = state_Fail.to(state_Wait_to_Start)
     # End Transitions
 
     def __init__(self, screen_fsm):
@@ -51,10 +53,14 @@ class WaitToMatchTask(StateMachine):
         elif self.current_state == self.state_Success:
             if False:  # Success
                 pass  # Success
+            elif True:
+                self.trans_5_s2ws(poke)
         # End of Success conditional
         elif self.current_state == self.state_Fail:
             if False:  # Fail
                 pass  # Fail
+            elif True:
+                self.trans_6_f2ws(poke)
         # End of Fail conditional
         # End conditionals
 
@@ -77,6 +83,12 @@ class WaitToMatchTask(StateMachine):
          self.screen_fsm.step(action='show_ttm')
 
     def on_trans_4_p2f(self, poke):
+        self.screen_fsm.step(action='blank')
+
+    def on_trans_5_s2ws(self, poke):
+        self.screen.fsm.step(action='blank')
+
+    def on_trans_6_f2ws(self, poke):
         self.screen_fsm.step(action='blank')
 
     # End transition callbacks

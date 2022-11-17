@@ -21,10 +21,12 @@
                                    419.0
                               ]
                          },
-                         "p2": [
-                              131.0,
-                              229.0
-                         ],
+                         "p2": {
+                              "py/tuple": [
+                                   131.0,
+                                   229.0
+                              ]
+                         },
                          "p3": {
                               "py/tuple": [
                                    189.0,
@@ -32,10 +34,10 @@
                               ]
                          },
                          "selected": false,
-                         "bezier": 358,
-                         "arrow": 360,
-                         "circle": 359,
-                         "name_text": 361,
+                         "bezier": 45,
+                         "arrow": 47,
+                         "circle": 46,
+                         "name_text": 48,
                          "is_a_self_transition": true
                     },
                     "Push_Left": {
@@ -51,21 +53,55 @@
                                    419.0
                               ]
                          },
-                         "p2": [
-                              238.0,
-                              275.0
-                         ],
+                         "p2": {
+                              "py/tuple": [
+                                   238.0,
+                                   275.0
+                              ]
+                         },
                          "p3": {
                               "py/tuple": [
-                                   449.0,
-                                   223.0
+                                   463.0,
+                                   139.0
                               ]
                          },
                          "selected": false,
-                         "bezier": 59955,
-                         "arrow": 59957,
-                         "circle": 59956,
-                         "name_text": 59958,
+                         "bezier": 97160,
+                         "arrow": 97162,
+                         "circle": 97161,
+                         "name_text": 97163,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                         "to_state": "Push_Right",
+                         "name": "5_wp2pr",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   213.0,
+                                   572.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94798,
+                         "arrow": 94800,
+                         "circle": 94799,
+                         "name_text": 94801,
                          "is_a_self_transition": false
                     }
                },
@@ -83,10 +119,12 @@
                                    419.0
                               ]
                          },
-                         "p2": [
-                              131.0,
-                              229.0
-                         ],
+                         "p2": {
+                              "py/tuple": [
+                                   131.0,
+                                   229.0
+                              ]
+                         },
                          "p3": {
                               "py/tuple": [
                                    189.0,
@@ -94,10 +132,10 @@
                               ]
                          },
                          "selected": false,
-                         "bezier": 358,
-                         "arrow": 360,
-                         "circle": 359,
-                         "name_text": 361,
+                         "bezier": 45,
+                         "arrow": 47,
+                         "circle": 46,
+                         "name_text": 48,
                          "is_a_self_transition": true
                     },
                     "Push_Left": {
@@ -140,7 +178,99 @@
                                         "name_text": 60226,
                                         "is_a_self_transition": true
                                    },
-                                   "Wait_to_Poke": "<transition.Transition object at 0x000001E77F33EA30>"
+                                   "Wait_to_Poke": "<transition.Transition object at 0x000001E77F33EA30>",
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Push_Right",
+                                        "name": "7_pl2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  368.0,
+                                                  447.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617635,
+                                        "arrow": 617637,
+                                        "circle": 617636,
+                                        "name_text": 617638,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Success": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Success",
+                                        "name": "9_pl2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             663.0,
+                                             194.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  853.0,
+                                                  280.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 612677,
+                                        "arrow": 612679,
+                                        "circle": 612678,
+                                        "name_text": 612680,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Fail": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Fail",
+                                        "name": "10_pl2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             776.0,
+                                             526.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  879.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 676932,
+                                        "arrow": 676934,
+                                        "circle": 676933,
+                                        "name_text": 676935,
+                                        "is_a_self_transition": false
+                                   }
                               },
                               "transitions_to_here": {
                                    "Push_Left": {
@@ -202,6 +332,269 @@
                                         "circle": 59956,
                                         "name_text": 59958,
                                         "is_a_self_transition": false
+                                   },
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": {
+                                             "py/object": "state_node.State",
+                                             "name": "Push_Right",
+                                             "drawlayer": 40,
+                                             "pos_x": 472.0,
+                                             "pos_y": 711.0,
+                                             "selected": false,
+                                             "transitions_from_here": {
+                                                  "Push_Right": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Push_Right",
+                                                       "to_state": "Push_Right",
+                                                       "name": "4_pr2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            587.0,
+                                                            860.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 542.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617835,
+                                                       "arrow": 617837,
+                                                       "circle": 617836,
+                                                       "name_text": 617838,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Wait_to_Poke": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                                       "to_state": "Wait_to_Poke",
+                                                       "name": "6_pr2wp",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 293.0,
+                                                                 483.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 119.0,
+                                                                 419.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617619,
+                                                       "arrow": 617621,
+                                                       "circle": 617620,
+                                                       "name_text": 617622,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Push_Left": "<transition.Transition object at 0x000001E77F45BCA0>",
+                                                  "Success": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                                       "to_state": "Success",
+                                                       "name": "11_pr2s",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            683.0,
+                                                            579.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 853.0,
+                                                                 280.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 735528,
+                                                       "arrow": 735530,
+                                                       "circle": 735529,
+                                                       "name_text": 735531,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Fail": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                                       "to_state": "Fail",
+                                                       "name": "12_pr2f",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            683.0,
+                                                            746.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 879.0,
+                                                                 667.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 779717,
+                                                       "arrow": 779719,
+                                                       "circle": 779718,
+                                                       "name_text": 779720,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "transitions_to_here": {
+                                                  "Push_Right": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Push_Right",
+                                                       "to_state": "Push_Right",
+                                                       "name": "4_pr2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            587.0,
+                                                            860.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 542.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617835,
+                                                       "arrow": 617837,
+                                                       "circle": 617836,
+                                                       "name_text": 617838,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Wait_to_Poke": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                                                       "to_state": "Push_Right",
+                                                       "name": "5_wp2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 119.0,
+                                                                 419.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 213.0,
+                                                                 572.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617631,
+                                                       "arrow": 617633,
+                                                       "circle": 617632,
+                                                       "name_text": 617634,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Push_Left": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                                       "to_state": "Push_Right",
+                                                       "name": "7_pl2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 449.0,
+                                                                 223.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 368.0,
+                                                                 447.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617635,
+                                                       "arrow": 617637,
+                                                       "circle": 617636,
+                                                       "name_text": 617638,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "is_initial": false,
+                                             "ellipse_id": 617613,
+                                             "label_id": 617614
+                                        },
+                                        "to_state": "Push_Left",
+                                        "name": "8_pr2pl",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  492.0,
+                                                  417.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617623,
+                                        "arrow": 617625,
+                                        "circle": 617624,
+                                        "name_text": 617626,
+                                        "is_a_self_transition": false
                                    }
                               },
                               "is_initial": false,
@@ -214,13 +607,154 @@
                          "item_handler_registry": "widget handler",
                          "p1": {
                               "py/tuple": [
-                                   449.0,
-                                   223.0
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   315.0,
+                                   364.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97140,
+                         "arrow": 97142,
+                         "circle": 97141,
+                         "name_text": 97143,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                         "to_state": "Wait_to_Poke",
+                         "name": "6_pr2wp",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   293.0,
+                                   483.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94778,
+                         "arrow": 94780,
+                         "circle": 94779,
+                         "name_text": 94781,
+                         "is_a_self_transition": false
+                    },
+                    "Success": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Success",
+                              "drawlayer": 40,
+                              "pos_x": 853.0,
+                              "pos_y": 280.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Wait_to_Poke": "<transition.Transition object at 0x000002B5662D3790>"
+                              },
+                              "transitions_to_here": {
+                                   "Push_Left": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Success",
+                                        "name": "9_pl2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  463.0,
+                                                  139.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             742.0,
+                                             151.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  853.0,
+                                                  280.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 97592,
+                                        "arrow": 97594,
+                                        "circle": 97593,
+                                        "name_text": 97595,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Success",
+                                        "name": "11_pr2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  459.0,
+                                                  729.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  683.0,
+                                                  579.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  853.0,
+                                                  280.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 94786,
+                                        "arrow": 94788,
+                                        "circle": 94787,
+                                        "name_text": 94789,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 101,
+                              "label_id": 102
+                         },
+                         "to_state": "Wait_to_Poke",
+                         "name": "13_s2wp",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   853.0,
+                                   280.0
                               ]
                          },
                          "p2": [
-                              329.0,
-                              376.0
+                              507.0,
+                              261.0
                          ],
                          "p3": {
                               "py/tuple": [
@@ -229,23 +763,132 @@
                               ]
                          },
                          "selected": false,
-                         "bezier": 266229,
-                         "arrow": 266231,
-                         "circle": 266230,
-                         "name_text": 266232,
+                         "bezier": 97804,
+                         "arrow": 97806,
+                         "circle": 97805,
+                         "name_text": 97807,
+                         "is_a_self_transition": false
+                    },
+                    "Fail": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Fail",
+                              "drawlayer": 40,
+                              "pos_x": 879.0,
+                              "pos_y": 667.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Wait_to_Poke": "<transition.Transition object at 0x000002B5663ED0D0>"
+                              },
+                              "transitions_to_here": {
+                                   "Push_Left": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Fail",
+                                        "name": "10_pl2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  463.0,
+                                                  139.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  776.0,
+                                                  526.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  879.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 97152,
+                                        "arrow": 97154,
+                                        "circle": 97153,
+                                        "name_text": 97155,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Fail",
+                                        "name": "12_pr2f",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  459.0,
+                                                  729.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  692.0,
+                                                  723.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  879.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 94790,
+                                        "arrow": 94792,
+                                        "circle": 94791,
+                                        "name_text": 94793,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 103,
+                              "label_id": 104
+                         },
+                         "to_state": "Wait_to_Poke",
+                         "name": "14_f2wp",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   879.0,
+                                   667.0
+                              ]
+                         },
+                         "p2": [
+                              496.0,
+                              641.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 170777,
+                         "arrow": 170779,
+                         "circle": 170778,
+                         "name_text": 170780,
                          "is_a_self_transition": false
                     }
                },
                "is_initial": true,
-               "ellipse_id": 72,
-               "label_id": 73
+               "ellipse_id": 43,
+               "label_id": 44
           },
           "Push_Left": {
                "py/object": "state_node.State",
                "name": "Push_Left",
                "drawlayer": 40,
-               "pos_x": 449.0,
-               "pos_y": 223.0,
+               "pos_x": 463.0,
+               "pos_y": 139.0,
                "selected": false,
                "transitions_from_here": {
                     "Push_Left": {
@@ -257,28 +900,613 @@
                          "item_handler_registry": "widget handler",
                          "p1": {
                               "py/tuple": [
-                                   449.0,
-                                   223.0
+                                   463.0,
+                                   139.0
                               ]
                          },
                          "p2": [
-                              534.0,
-                              71.0
+                              681.0,
+                              46.0
                          ],
                          "p3": {
                               "py/tuple": [
-                                   519.0,
-                                   223.0
+                                   533.0,
+                                   139.0
                               ]
                          },
                          "selected": false,
-                         "bezier": 60223,
-                         "arrow": 60225,
-                         "circle": 60224,
-                         "name_text": 60226,
+                         "bezier": 97404,
+                         "arrow": 97406,
+                         "circle": 97405,
+                         "name_text": 97407,
                          "is_a_self_transition": true
                     },
-                    "Wait_to_Poke": "<transition.Transition object at 0x000001E77F33EA30>"
+                    "Wait_to_Poke": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Push_Left",
+                              "drawlayer": 40,
+                              "pos_x": 449.0,
+                              "pos_y": 223.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Push_Left": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Push_Left",
+                                        "to_state": "Push_Left",
+                                        "name": "2_pl2pl",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             534.0,
+                                             71.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  519.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 60223,
+                                        "arrow": 60225,
+                                        "circle": 60224,
+                                        "name_text": 60226,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Wait_to_Poke": "<transition.Transition object at 0x000001E77F33EA30>",
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Push_Right",
+                                        "name": "7_pl2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  368.0,
+                                                  447.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617635,
+                                        "arrow": 617637,
+                                        "circle": 617636,
+                                        "name_text": 617638,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Success": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Success",
+                                        "name": "9_pl2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             663.0,
+                                             194.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  853.0,
+                                                  280.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 612677,
+                                        "arrow": 612679,
+                                        "circle": 612678,
+                                        "name_text": 612680,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Fail": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Fail",
+                                        "name": "10_pl2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             776.0,
+                                             526.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  879.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 676932,
+                                        "arrow": 676934,
+                                        "circle": 676933,
+                                        "name_text": 676935,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "transitions_to_here": {
+                                   "Push_Left": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Push_Left",
+                                        "to_state": "Push_Left",
+                                        "name": "2_pl2pl",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             534.0,
+                                             71.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  519.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 60223,
+                                        "arrow": 60225,
+                                        "circle": 60224,
+                                        "name_text": 60226,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Wait_to_Poke": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                                        "to_state": "Push_Left",
+                                        "name": "1_wp2pl",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  119.0,
+                                                  419.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             238.0,
+                                             275.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 59955,
+                                        "arrow": 59957,
+                                        "circle": 59956,
+                                        "name_text": 59958,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": {
+                                             "py/object": "state_node.State",
+                                             "name": "Push_Right",
+                                             "drawlayer": 40,
+                                             "pos_x": 472.0,
+                                             "pos_y": 711.0,
+                                             "selected": false,
+                                             "transitions_from_here": {
+                                                  "Push_Right": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Push_Right",
+                                                       "to_state": "Push_Right",
+                                                       "name": "4_pr2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            587.0,
+                                                            860.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 542.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617835,
+                                                       "arrow": 617837,
+                                                       "circle": 617836,
+                                                       "name_text": 617838,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Wait_to_Poke": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                                       "to_state": "Wait_to_Poke",
+                                                       "name": "6_pr2wp",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 293.0,
+                                                                 483.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 119.0,
+                                                                 419.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617619,
+                                                       "arrow": 617621,
+                                                       "circle": 617620,
+                                                       "name_text": 617622,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Push_Left": "<transition.Transition object at 0x000001E77F45BCA0>",
+                                                  "Success": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                                       "to_state": "Success",
+                                                       "name": "11_pr2s",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            683.0,
+                                                            579.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 853.0,
+                                                                 280.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 735528,
+                                                       "arrow": 735530,
+                                                       "circle": 735529,
+                                                       "name_text": 735531,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Fail": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                                       "to_state": "Fail",
+                                                       "name": "12_pr2f",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            683.0,
+                                                            746.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 879.0,
+                                                                 667.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 779717,
+                                                       "arrow": 779719,
+                                                       "circle": 779718,
+                                                       "name_text": 779720,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "transitions_to_here": {
+                                                  "Push_Right": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "Push_Right",
+                                                       "to_state": "Push_Right",
+                                                       "name": "4_pr2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "p2": [
+                                                            587.0,
+                                                            860.0
+                                                       ],
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 542.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617835,
+                                                       "arrow": 617837,
+                                                       "circle": 617836,
+                                                       "name_text": 617838,
+                                                       "is_a_self_transition": true
+                                                  },
+                                                  "Wait_to_Poke": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                                                       "to_state": "Push_Right",
+                                                       "name": "5_wp2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 119.0,
+                                                                 419.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 213.0,
+                                                                 572.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617631,
+                                                       "arrow": 617633,
+                                                       "circle": 617632,
+                                                       "name_text": 617634,
+                                                       "is_a_self_transition": false
+                                                  },
+                                                  "Push_Left": {
+                                                       "py/object": "transition.Transition",
+                                                       "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                                       "to_state": "Push_Right",
+                                                       "name": "7_pl2pr",
+                                                       "drawlayer": 39,
+                                                       "item_handler_registry": "widget handler",
+                                                       "p1": {
+                                                            "py/tuple": [
+                                                                 449.0,
+                                                                 223.0
+                                                            ]
+                                                       },
+                                                       "p2": {
+                                                            "py/tuple": [
+                                                                 368.0,
+                                                                 447.0
+                                                            ]
+                                                       },
+                                                       "p3": {
+                                                            "py/tuple": [
+                                                                 472.0,
+                                                                 711.0
+                                                            ]
+                                                       },
+                                                       "selected": false,
+                                                       "bezier": 617635,
+                                                       "arrow": 617637,
+                                                       "circle": 617636,
+                                                       "name_text": 617638,
+                                                       "is_a_self_transition": false
+                                                  }
+                                             },
+                                             "is_initial": false,
+                                             "ellipse_id": 617613,
+                                             "label_id": 617614
+                                        },
+                                        "to_state": "Push_Left",
+                                        "name": "8_pr2pl",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  492.0,
+                                                  417.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617623,
+                                        "arrow": 617625,
+                                        "circle": 617624,
+                                        "name_text": 617626,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 373,
+                              "label_id": 374
+                         },
+                         "to_state": "Wait_to_Poke",
+                         "name": "3_pl2wp",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   315.0,
+                                   364.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97140,
+                         "arrow": 97142,
+                         "circle": 97141,
+                         "name_text": 97143,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                         "to_state": "Push_Right",
+                         "name": "7_pl2pr",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   368.0,
+                                   447.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97144,
+                         "arrow": 97146,
+                         "circle": 97145,
+                         "name_text": 97147,
+                         "is_a_self_transition": false
+                    },
+                    "Success": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                         "to_state": "Success",
+                         "name": "9_pl2s",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": [
+                              742.0,
+                              151.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   853.0,
+                                   280.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97592,
+                         "arrow": 97594,
+                         "circle": 97593,
+                         "name_text": 97595,
+                         "is_a_self_transition": false
+                    },
+                    "Fail": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                         "to_state": "Fail",
+                         "name": "10_pl2s",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   776.0,
+                                   526.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   879.0,
+                                   667.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97152,
+                         "arrow": 97154,
+                         "circle": 97153,
+                         "name_text": 97155,
+                         "is_a_self_transition": false
+                    }
                },
                "transitions_to_here": {
                     "Push_Left": {
@@ -290,25 +1518,25 @@
                          "item_handler_registry": "widget handler",
                          "p1": {
                               "py/tuple": [
-                                   449.0,
-                                   223.0
+                                   463.0,
+                                   139.0
                               ]
                          },
                          "p2": [
-                              534.0,
-                              71.0
+                              681.0,
+                              46.0
                          ],
                          "p3": {
                               "py/tuple": [
-                                   519.0,
-                                   223.0
+                                   533.0,
+                                   139.0
                               ]
                          },
                          "selected": false,
-                         "bezier": 60223,
-                         "arrow": 60225,
-                         "circle": 60224,
-                         "name_text": 60226,
+                         "bezier": 97404,
+                         "arrow": 97406,
+                         "circle": 97405,
+                         "name_text": 97407,
                          "is_a_self_transition": true
                     },
                     "Wait_to_Poke": {
@@ -324,27 +1552,948 @@
                                    419.0
                               ]
                          },
-                         "p2": [
-                              238.0,
-                              275.0
-                         ],
+                         "p2": {
+                              "py/tuple": [
+                                   238.0,
+                                   275.0
+                              ]
+                         },
                          "p3": {
                               "py/tuple": [
-                                   449.0,
-                                   223.0
+                                   463.0,
+                                   139.0
                               ]
                          },
                          "selected": false,
-                         "bezier": 59955,
-                         "arrow": 59957,
-                         "circle": 59956,
-                         "name_text": 59958,
+                         "bezier": 97160,
+                         "arrow": 97162,
+                         "circle": 97161,
+                         "name_text": 97163,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Push_Right",
+                              "drawlayer": 40,
+                              "pos_x": 472.0,
+                              "pos_y": 711.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Push_Right",
+                                        "to_state": "Push_Right",
+                                        "name": "4_pr2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             587.0,
+                                             860.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  542.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617835,
+                                        "arrow": 617837,
+                                        "circle": 617836,
+                                        "name_text": 617838,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Wait_to_Poke": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Wait_to_Poke",
+                                        "name": "6_pr2wp",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  293.0,
+                                                  483.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  119.0,
+                                                  419.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617619,
+                                        "arrow": 617621,
+                                        "circle": 617620,
+                                        "name_text": 617622,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Left": "<transition.Transition object at 0x000001E77F45BCA0>",
+                                   "Success": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Success",
+                                        "name": "11_pr2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             683.0,
+                                             579.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  853.0,
+                                                  280.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 735528,
+                                        "arrow": 735530,
+                                        "circle": 735529,
+                                        "name_text": 735531,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Fail": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Fail",
+                                        "name": "12_pr2f",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             683.0,
+                                             746.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  879.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 779717,
+                                        "arrow": 779719,
+                                        "circle": 779718,
+                                        "name_text": 779720,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "transitions_to_here": {
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Push_Right",
+                                        "to_state": "Push_Right",
+                                        "name": "4_pr2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             587.0,
+                                             860.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  542.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617835,
+                                        "arrow": 617837,
+                                        "circle": 617836,
+                                        "name_text": 617838,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Wait_to_Poke": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                                        "to_state": "Push_Right",
+                                        "name": "5_wp2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  119.0,
+                                                  419.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  213.0,
+                                                  572.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617631,
+                                        "arrow": 617633,
+                                        "circle": 617632,
+                                        "name_text": 617634,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Left": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Push_Right",
+                                        "name": "7_pl2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  368.0,
+                                                  447.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617635,
+                                        "arrow": 617637,
+                                        "circle": 617636,
+                                        "name_text": 617638,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 617613,
+                              "label_id": 617614
+                         },
+                         "to_state": "Push_Left",
+                         "name": "8_pr2pl",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   492.0,
+                                   417.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97164,
+                         "arrow": 97166,
+                         "circle": 97165,
+                         "name_text": 97167,
                          "is_a_self_transition": false
                     }
                },
                "is_initial": false,
-               "ellipse_id": 373,
-               "label_id": 374
+               "ellipse_id": 97134,
+               "label_id": 97135
+          },
+          "Push_Right": {
+               "py/object": "state_node.State",
+               "name": "Push_Right",
+               "drawlayer": 40,
+               "pos_x": 459.0,
+               "pos_y": 729.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Push_Right",
+                         "to_state": "Push_Right",
+                         "name": "4_pr2pr",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": [
+                              622.0,
+                              851.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   529.0,
+                                   729.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 95022,
+                         "arrow": 95024,
+                         "circle": 95023,
+                         "name_text": 95025,
+                         "is_a_self_transition": true
+                    },
+                    "Wait_to_Poke": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                         "to_state": "Wait_to_Poke",
+                         "name": "6_pr2wp",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   293.0,
+                                   483.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94778,
+                         "arrow": 94780,
+                         "circle": 94779,
+                         "name_text": 94781,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Left": {
+                         "py/object": "transition.Transition",
+                         "from_state": {
+                              "py/object": "state_node.State",
+                              "name": "Push_Right",
+                              "drawlayer": 40,
+                              "pos_x": 472.0,
+                              "pos_y": 711.0,
+                              "selected": false,
+                              "transitions_from_here": {
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Push_Right",
+                                        "to_state": "Push_Right",
+                                        "name": "4_pr2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             587.0,
+                                             860.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  542.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617835,
+                                        "arrow": 617837,
+                                        "circle": 617836,
+                                        "name_text": 617838,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Wait_to_Poke": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Wait_to_Poke",
+                                        "name": "6_pr2wp",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  293.0,
+                                                  483.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  119.0,
+                                                  419.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617619,
+                                        "arrow": 617621,
+                                        "circle": 617620,
+                                        "name_text": 617622,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Left": "<transition.Transition object at 0x000001E77F45BCA0>",
+                                   "Success": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Success",
+                                        "name": "11_pr2s",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             683.0,
+                                             579.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  853.0,
+                                                  280.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 735528,
+                                        "arrow": 735530,
+                                        "circle": 735529,
+                                        "name_text": 735531,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Fail": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                                        "to_state": "Fail",
+                                        "name": "12_pr2f",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             683.0,
+                                             746.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  879.0,
+                                                  667.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 779717,
+                                        "arrow": 779719,
+                                        "circle": 779718,
+                                        "name_text": 779720,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "transitions_to_here": {
+                                   "Push_Right": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "Push_Right",
+                                        "to_state": "Push_Right",
+                                        "name": "4_pr2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "p2": [
+                                             587.0,
+                                             860.0
+                                        ],
+                                        "p3": {
+                                             "py/tuple": [
+                                                  542.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617835,
+                                        "arrow": 617837,
+                                        "circle": 617836,
+                                        "name_text": 617838,
+                                        "is_a_self_transition": true
+                                   },
+                                   "Wait_to_Poke": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                                        "to_state": "Push_Right",
+                                        "name": "5_wp2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  119.0,
+                                                  419.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  213.0,
+                                                  572.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617631,
+                                        "arrow": 617633,
+                                        "circle": 617632,
+                                        "name_text": 617634,
+                                        "is_a_self_transition": false
+                                   },
+                                   "Push_Left": {
+                                        "py/object": "transition.Transition",
+                                        "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                                        "to_state": "Push_Right",
+                                        "name": "7_pl2pr",
+                                        "drawlayer": 39,
+                                        "item_handler_registry": "widget handler",
+                                        "p1": {
+                                             "py/tuple": [
+                                                  449.0,
+                                                  223.0
+                                             ]
+                                        },
+                                        "p2": {
+                                             "py/tuple": [
+                                                  368.0,
+                                                  447.0
+                                             ]
+                                        },
+                                        "p3": {
+                                             "py/tuple": [
+                                                  472.0,
+                                                  711.0
+                                             ]
+                                        },
+                                        "selected": false,
+                                        "bezier": 617635,
+                                        "arrow": 617637,
+                                        "circle": 617636,
+                                        "name_text": 617638,
+                                        "is_a_self_transition": false
+                                   }
+                              },
+                              "is_initial": false,
+                              "ellipse_id": 617613,
+                              "label_id": 617614
+                         },
+                         "to_state": "Push_Left",
+                         "name": "8_pr2pl",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   492.0,
+                                   417.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97164,
+                         "arrow": 97166,
+                         "circle": 97165,
+                         "name_text": 97167,
+                         "is_a_self_transition": false
+                    },
+                    "Success": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                         "to_state": "Success",
+                         "name": "11_pr2s",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   683.0,
+                                   579.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   853.0,
+                                   280.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94786,
+                         "arrow": 94788,
+                         "circle": 94787,
+                         "name_text": 94789,
+                         "is_a_self_transition": false
+                    },
+                    "Fail": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                         "to_state": "Fail",
+                         "name": "12_pr2f",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   692.0,
+                                   723.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   879.0,
+                                   667.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94790,
+                         "arrow": 94792,
+                         "circle": 94791,
+                         "name_text": 94793,
+                         "is_a_self_transition": false
+                    }
+               },
+               "transitions_to_here": {
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "Push_Right",
+                         "to_state": "Push_Right",
+                         "name": "4_pr2pr",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": [
+                              622.0,
+                              851.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   529.0,
+                                   729.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 95022,
+                         "arrow": 95024,
+                         "circle": 95023,
+                         "name_text": 95025,
+                         "is_a_self_transition": true
+                    },
+                    "Wait_to_Poke": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45BD90>",
+                         "to_state": "Push_Right",
+                         "name": "5_wp2pr",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   119.0,
+                                   419.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   213.0,
+                                   572.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94798,
+                         "arrow": 94800,
+                         "circle": 94799,
+                         "name_text": 94801,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Left": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                         "to_state": "Push_Right",
+                         "name": "7_pl2pr",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   368.0,
+                                   447.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97144,
+                         "arrow": 97146,
+                         "circle": 97145,
+                         "name_text": 97147,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 94772,
+               "label_id": 94773
+          },
+          "Success": {
+               "py/object": "state_node.State",
+               "name": "Success",
+               "drawlayer": 40,
+               "pos_x": 853.0,
+               "pos_y": 280.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Wait_to_Poke": "<transition.Transition object at 0x000002B5662D3790>"
+               },
+               "transitions_to_here": {
+                    "Push_Left": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                         "to_state": "Success",
+                         "name": "9_pl2s",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": [
+                              742.0,
+                              151.0
+                         ],
+                         "p3": {
+                              "py/tuple": [
+                                   853.0,
+                                   280.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97592,
+                         "arrow": 97594,
+                         "circle": 97593,
+                         "name_text": 97595,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                         "to_state": "Success",
+                         "name": "11_pr2s",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   683.0,
+                                   579.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   853.0,
+                                   280.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94786,
+                         "arrow": 94788,
+                         "circle": 94787,
+                         "name_text": 94789,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 101,
+               "label_id": 102
+          },
+          "Fail": {
+               "py/object": "state_node.State",
+               "name": "Fail",
+               "drawlayer": 40,
+               "pos_x": 879.0,
+               "pos_y": 667.0,
+               "selected": false,
+               "transitions_from_here": {
+                    "Wait_to_Poke": "<transition.Transition object at 0x000002B5663ED0D0>"
+               },
+               "transitions_to_here": {
+                    "Push_Left": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B910>",
+                         "to_state": "Fail",
+                         "name": "10_pl2s",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   463.0,
+                                   139.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   776.0,
+                                   526.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   879.0,
+                                   667.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 97152,
+                         "arrow": 97154,
+                         "circle": 97153,
+                         "name_text": 97155,
+                         "is_a_self_transition": false
+                    },
+                    "Push_Right": {
+                         "py/object": "transition.Transition",
+                         "from_state": "<state_node.State object at 0x000001E77F45B4C0>",
+                         "to_state": "Fail",
+                         "name": "12_pr2f",
+                         "drawlayer": 39,
+                         "item_handler_registry": "widget handler",
+                         "p1": {
+                              "py/tuple": [
+                                   459.0,
+                                   729.0
+                              ]
+                         },
+                         "p2": {
+                              "py/tuple": [
+                                   692.0,
+                                   723.0
+                              ]
+                         },
+                         "p3": {
+                              "py/tuple": [
+                                   879.0,
+                                   667.0
+                              ]
+                         },
+                         "selected": false,
+                         "bezier": 94790,
+                         "arrow": 94792,
+                         "circle": 94791,
+                         "name_text": 94793,
+                         "is_a_self_transition": false
+                    }
+               },
+               "is_initial": false,
+               "ellipse_id": 103,
+               "label_id": 104
           }
      },
      "state_variables": [
