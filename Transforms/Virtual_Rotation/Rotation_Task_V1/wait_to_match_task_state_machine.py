@@ -2,7 +2,7 @@
 import numpy as np
 from statemachine import StateMachine, State
 
-class WaitToMatchTask(StateMachine):
+class WaitToMatchTaskFSM(StateMachine):
 
     # Start States
     state_Wait_to_Start = State("Wait_to_Start", initial=True)

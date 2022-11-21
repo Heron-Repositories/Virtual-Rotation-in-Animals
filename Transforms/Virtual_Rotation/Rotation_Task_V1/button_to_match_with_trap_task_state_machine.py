@@ -3,7 +3,7 @@ import numpy as np
 from statemachine import StateMachine, State
 
 
-class ButtonToMatchWithTrapTask():
+class ButtonToMatchWithTrapTaskFSM():
 
     # Start States
     state_Wait_to_Poke = State("Wait_to_Poke", initial=True)

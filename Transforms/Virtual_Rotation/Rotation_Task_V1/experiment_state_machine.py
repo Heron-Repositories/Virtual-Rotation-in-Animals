@@ -3,7 +3,7 @@ import numpy as np
 from statemachine import StateMachine, State
 
 
-class Experiment():
+class ExperimentFSM():
 
     # Start States
     state_Initialisation = State("Initialisation", initial=True)
