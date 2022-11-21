@@ -86,7 +86,7 @@ class WaitToMatchTaskFSM(StateMachine):
         self.screen_fsm.step(action='blank')
 
     def on_trans_5_s2ws(self, poke):
-        self.screen.fsm.step(action='blank')
+        self.screen_fsm.step(action='blank')
 
     def on_trans_6_f2ws(self, poke):
         self.screen_fsm.step(action='blank')

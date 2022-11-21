@@ -16,78 +16,85 @@ sys.path.insert(0, path.dirname(current_dir))
 from Heron.communication.socket_for_serialization import Socket
 from Heron import general_utils as gu
 from Heron.gui.visualisation_dpg import VisualisationDPG
-import initialisation
+import initialisation as init
+from screen_state_machine import ScreenFSM
+from wait_to_match_task_state_machine import WaitToMatchTaskFSM
 
-
-visualisation_on: bool
 config_script_file: str
 vis: VisualisationDPG
-
+screen_fsm: ScreenFSM
+task_fsm: WaitToMatchTaskFSM
 
 def initialise(_worker_object):
     global vis
-
-    global visualisation_on
     global config_script_file
 
-    # INITIALISE PARAMETERS
-    # Put the initialisation of the Node's parameter's in a try loop to take care of the time it takes for the GUI to
-    # update the SinkWorker object.
-    try:
-        parameters = _worker_object.parameters
-        visualisation_on = parameters[1]
-        config_script_file = parameters[2]
-    except:
-        return False
-    print('Hello')
-    print(initialisation.screen_fsm.current_state)
     visualisation_type = 'Single Pane Plot'
     buffer = 20
     vis = VisualisationDPG(_node_name=_worker_object.node_name, _node_index=_worker_object.node_index,
                            _visualisation_type=visualisation_type, _buffer=buffer)
 
-    _worker_object.relic_create_parameters_df(visualisation_on=visualisation_on, config_script_file=config_script_file)
+    try:
+        parameters = _worker_object.parameters
+        vis.visualisation_on = parameters[0]
+        config_script_file = parameters[1]
+    except:
+        return False
 
+    _worker_object.relic_create_parameters_df(visualisation_on=vis.visualisation_on,
+                                              config_script_file=config_script_file)
+
+    initialised_trial()
     return True
 
 
-def work_function(data, parameters, relic_update_substate_df):
-    global vis
-    global visualisation_on
-    global config_script_file
+def initialised_trial():
+    global screen_fsm
+    global task_fsm
 
-    # If any parameters need to be updated during runtime then do that here, e.g.
-    # Also update the visualisation parameter. This allows to turn on and off the visualisation window during
-    # run time
+    target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap = init.testing_for_wait_task()
+    screen_fsm = ScreenFSM(target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap)
+    task_fsm = WaitToMatchTaskFSM(screen_fsm=screen_fsm)
+
+
+def work_function(data, parameters):
+    global vis
+    global config_script_file
+    global screen_fsm
+    global task_fsm
+
     try:
-        visualisation_on = parameters[1]
         vis.visualisation_on = parameters[0]
     except:
         pass
 
-    topic = data[0]
-    print(topic)  # prints will not work if the operation is running on a different computer.
+    if task_fsm.current_state == task_fsm.state_Wait_to_Start:
+        initialised_trial()
+
+    topic = data[0].decode('utf-8')
 
     message = data[1:]
     message = Socket.reconstruct_array_from_bytes_message(message)
-    print(message)
 
-    #print(message.shape)
-    #some_data_to_visualise = message
-    #relic_update_substate_df(image__shape=message.shape)
-    #vis.visualise(some_data_to_visualise)
+    if 'Levers_State' in topic:
+        task_fsm.step(poke=message[0])
 
-    command_to_screen = np.array(['Cue=0, Manipulandum=0, Target=0, Trap=0'])
+    command_to_screen = np.array([screen_fsm.command_to_screen])
     command_to_reward = np.array([-1])
-    result = [command_to_screen, command_to_reward]
+    if task_fsm.current_state == task_fsm.state_Success:
+        command_to_reward = np.array([1])
 
+    result = [command_to_screen, command_to_reward]
+    print(screen_fsm.current_state)
+    print(task_fsm.current_state)
+    print(result)
+    print('----------------------------------------')
     return result
 
 
 def on_end_of_life():
     global vis
     vis.end_of_life()
-
 
 if __name__ == "__main__":
     worker_object = gu.start_the_transform_worker_process(work_function=work_function,

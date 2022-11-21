@@ -42,7 +42,7 @@ class ScreenFSM(StateMachine):
         self.target_angle = target_angle
         self.trap_angle = trap_angle
         self.manip_angle = manip_angle
-        self.command_to_screen = None
+        self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
         self.speed = speed
         self.target_reached = False
         self.trap_reached = False
