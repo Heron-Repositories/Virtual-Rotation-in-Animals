@@ -20,12 +20,12 @@ NodeAttributeNames = ['Parameters', 'Reward Poke State', 'Levers State', 'Comman
 
 NodeAttributeType = ['Static', 'Input', 'Input', 'Output', 'Output']
 
-ParameterNames = ['Visualisation', 'Config script']
+ParameterNames = ['Visualisation', 'Task Type', 'Speed', 'Number of Pellets', 'Wait period / s']
 
-ParameterTypes = ['bool', 'str']  # The types of the parameters (in string form).
+ParameterTypes = ['bool', 'str', 'int', 'int', 'float']  # The types of the parameters (in string form).
 # types allowed are: 'bool', 'str', 'list', 'int' and 'float'. Again for no parameters make an empty list.
 
-ParametersDefaultValues = [False, '']
+ParametersDefaultValues = [False, 'Wait', 20, 1, 0.1]
 
 WorkerDefaultExecutable = os.path.join(os.path.dirname(Exec), 'rotation_task_V1_worker.py')
 
