@@ -3,7 +3,7 @@ import numpy as np
 from statemachine import StateMachine, State
 
 
-class ButtonToMatchWithTrapTaskFSM():
+class ButtonToMatchWithTrapTaskFSM(StateMachine):
 
     # Start States
     state_Wait_to_Poke = State("Wait_to_Poke", initial=True)
@@ -32,7 +32,7 @@ class ButtonToMatchWithTrapTaskFSM():
     # End Transitions
 
     def __init__(self, screen_fsm):
-        super().__init__(StateMachine)
+        super().__init__()
         # Start State Variables
         self.screen_fsm = screen_fsm
         # End State Variables
