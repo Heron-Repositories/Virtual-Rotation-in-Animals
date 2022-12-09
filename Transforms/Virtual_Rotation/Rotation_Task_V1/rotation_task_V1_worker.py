@@ -56,7 +56,6 @@ def initialise(_worker_object):
     except:
         return False
 
-<<<<<<< HEAD
     _worker_object.num_of_iters_to_update_relics_substate = 100
     _worker_object.relic_create_parameters_df(visualisation_on=vis.visualisation_on,
                                               task_description=task_description, speed=speed,
@@ -67,7 +66,7 @@ def initialise(_worker_object):
                                                angle_dif_between_man_and_target_trap=3,
                                                time_to_target=wait_period,
                                                punish_time=7)
-=======
+
     _worker_object.savenodestate_create_parameters_df(visualisation_on=vis.visualisation_on,
                                                       config_script_file=config_script_file)
     if task_type == 'Wait':
@@ -75,13 +74,12 @@ def initialise(_worker_object):
                                                        angle_dif_between_man_and_target_trap=3,
                                                        time_to_target=wait_period,
                                                        punish_time=7)
->>>>>>> 627cc1a9ba681a4a3333f0f386939fb8ad5d5bc2
 
     experiment_fsm = ExperimentFSM(initialisation=trial_initialisation)
     return True
 
 
-def work_function(data, parameters, relic_update_substate_df):
+def work_function(data, parameters, savenodestate_update_substate_df):
     global vis
     global number_of_pellets
     global experiment_fsm
@@ -121,12 +119,12 @@ def work_function(data, parameters, relic_update_substate_df):
     task_state = str(experiment_fsm.task_fsm.current_state)
     screen_state = str(experiment_fsm.screen_fsm.current_state)
     time_to_target = trial_initialisation.time_to_target
-    relic_update_substate_df(exp_state=exp_state,
-                             task_state=task_state,
-                             screen_state=screen_state,
-                             time_to_target=time_to_target,
-                             command_to_screens=command_to_screen[0],
-                             command_to_food_poke=command_to_reward[0])
+    savenodestate_update_substate_df(exp_state=exp_state,
+                                     task_state=task_state,
+                                     screen_state=screen_state,
+                                     time_to_target=time_to_target,
+                                     command_to_screens=command_to_screen[0],
+                                     command_to_food_poke=command_to_reward[0])
 
     result = [command_to_screen, command_to_reward]
     #print(screen_fsm.current_state)
