@@ -4,7 +4,6 @@
 # package installation. Do not change.">
 import sys
 from os import path
-import cv2
 import numpy as np
 
 current_dir = path.dirname(path.abspath(__file__))
@@ -25,6 +24,7 @@ vis: VisualisationDPG
 screen_fsm: ScreenFSM
 task_fsm: WaitToMatchTaskFSM
 
+
 def initialise(_worker_object):
     global vis
     global config_script_file
@@ -41,8 +41,8 @@ def initialise(_worker_object):
     except:
         return False
 
-    _worker_object.relic_create_parameters_df(visualisation_on=vis.visualisation_on,
-                                              config_script_file=config_script_file)
+    _worker_object.savenodestate_create_parameters_df(visualisation_on=vis.visualisation_on,
+                                                      config_script_file=config_script_file)
 
     initialised_trial()
     return True
@@ -95,6 +95,7 @@ def work_function(data, parameters):
 def on_end_of_life():
     global vis
     vis.end_of_life()
+
 
 if __name__ == "__main__":
     worker_object = gu.start_the_transform_worker_process(work_function=work_function,
