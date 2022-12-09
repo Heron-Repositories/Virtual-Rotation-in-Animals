@@ -25,9 +25,10 @@ class WaitToMatchTaskFSM(StateMachine):
         super().__init__()
         # Start State Variables
         self.screen_fsm = screen_fsm
+        self.success = False
         # End State Variables
 
-    def step(self, poke):
+    def step(self, poke, button):
         if False:
             pass
 
@@ -53,13 +54,13 @@ class WaitToMatchTaskFSM(StateMachine):
         elif self.current_state == self.state_Success:
             if False:  # Success
                 pass  # Success
-            elif True:
+            elif not poke:
                 self.trans_5_s2ws(poke)
         # End of Success conditional
         elif self.current_state == self.state_Fail:
             if False:  # Fail
                 pass  # Fail
-            elif True:
+            elif not poke:
                 self.trans_6_f2ws(poke)
         # End of Fail conditional
         # End conditionals
@@ -81,6 +82,7 @@ class WaitToMatchTaskFSM(StateMachine):
 
     def on_trans_3_p2suc(self, poke):
          self.screen_fsm.step(action='show_ttm')
+         self.success = True
 
     def on_trans_4_p2f(self, poke):
         self.screen_fsm.step(action='blank')

@@ -18,16 +18,29 @@ from Heron.gui.visualisation_dpg import VisualisationDPG
 import initialisation as init
 from screen_state_machine import ScreenFSM
 from wait_to_match_task_state_machine import WaitToMatchTaskFSM
+from experiment_state_machine import ExperimentFSM
 
 config_script_file: str
 vis: VisualisationDPG
 screen_fsm: ScreenFSM
 task_fsm: WaitToMatchTaskFSM
+experiment_fsm: ExperimentFSM
+trial_initialisation: init.WaitInitialisation
+task_type: str
+speed: int
+number_of_pellets: int
+reward_on = False
+reward_collected = False
+
 
 
 def initialise(_worker_object):
     global vis
-    global config_script_file
+    global trial_initialisation
+    global task_type
+    global speed
+    global number_of_pellets
+    global experiment_fsm
 
     visualisation_type = 'Single Pane Plot'
     buffer = 20
@@ -37,58 +50,66 @@ def initialise(_worker_object):
     try:
         parameters = _worker_object.parameters
         vis.visualisation_on = parameters[0]
-        config_script_file = parameters[1]
+        task_type = parameters[1]
+        speed = parameters[2]
+        number_of_pellets = parameters[3]
+        wait_period = parameters[4]
     except:
         return False
 
     _worker_object.savenodestate_create_parameters_df(visualisation_on=vis.visualisation_on,
                                                       config_script_file=config_script_file)
+    if task_type == 'Wait':
+        trial_initialisation = init.WaitInitialisation(vert_or_hor='random', speed=speed,
+                                                       angle_dif_between_man_and_target_trap=3,
+                                                       time_to_target=wait_period,
+                                                       punish_time=7)
 
-    initialised_trial()
+    experiment_fsm = ExperimentFSM(initialisation=trial_initialisation)
     return True
-
-
-def initialised_trial():
-    global screen_fsm
-    global task_fsm
-
-    target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap = init.testing_for_wait_task()
-    screen_fsm = ScreenFSM(target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap)
-    task_fsm = WaitToMatchTaskFSM(screen_fsm=screen_fsm)
 
 
 def work_function(data, parameters):
     global vis
-    global config_script_file
     global screen_fsm
     global task_fsm
+    global number_of_pellets
+    global experiment_fsm
+    global reward_on
+    global reward_collected
 
     try:
         vis.visualisation_on = parameters[0]
+        number_of_pellets = parameters[3]
     except:
         pass
-
-    if task_fsm.current_state == task_fsm.state_Wait_to_Start:
-        initialised_trial()
 
     topic = data[0].decode('utf-8')
 
     message = data[1:]
     message = Socket.reconstruct_array_from_bytes_message(message)
 
-    if 'Levers_State' in topic:
-        task_fsm.step(poke=message[0])
+    if 'Reward_Poke_State' in topic:
+        reward_on = message[0]
+        reward_collected = message[1]
 
-    command_to_screen = np.array([screen_fsm.command_to_screen])
+    if 'Levers_State' in topic:
+        #print('poke={}, button={}, reward_on={}, reward_collected={}'.
+        #      format(message[0], message[1], reward_on, reward_collected))
+        experiment_fsm.step(poke=message[0], button=message[1], reward_on=reward_on, reward_collected=reward_collected)
+        #print(experiment_fsm.current_state)
+        #print('-----------------')
+
+    command_to_screen = np.array([experiment_fsm.screen_fsm.command_to_screen])
     command_to_reward = np.array([-1])
-    if task_fsm.current_state == task_fsm.state_Success:
-        command_to_reward = np.array([1])
+    if experiment_fsm.current_state == experiment_fsm.state_Success:
+        command_to_reward = np.array([number_of_pellets])
 
     result = [command_to_screen, command_to_reward]
-    print(screen_fsm.current_state)
-    print(task_fsm.current_state)
-    print(result)
-    print('----------------------------------------')
+    #print(screen_fsm.current_state)
+    #print(task_fsm.current_state)
+    #print(result)
+    #print('----------------------------------------')
     return result
 
 

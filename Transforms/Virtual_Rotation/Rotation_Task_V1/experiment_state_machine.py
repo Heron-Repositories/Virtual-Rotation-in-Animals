@@ -3,7 +3,7 @@ import numpy as np
 from statemachine import StateMachine, State
 
 
-class ExperimentFSM():
+class ExperimentFSM(StateMachine):
 
     # Start States
     state_Initialisation = State("Initialisation", initial=True)
@@ -33,12 +33,12 @@ class ExperimentFSM():
     trans_13_pp2i = state_PunishPeriod.to(state_Initialisation)
     # End Transitions
 
-    def __init__(self, initialisation, screen_fsm):
-        super().__init__(StateMachine)
+    def __init__(self, initialisation):
+        super().__init__()
         # Start State Variables
         self.initialisation = initialisation
-        self.screen_fsm = screen_fsm
-        self.task_fsm = None
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
+        self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = None
         self.punish_time = None
         self.reward_on_command = False
@@ -137,13 +137,13 @@ class ExperimentFSM():
         self.last_trial = [True, False]
 
     def on_trans_8_gr2i(self, poke, button, reward_on, reward_collected):
-        self.screen_fsm = initialisation.get_screen_fsm()
-        self.task_fsm = initialisation.get_task_fsm(self.screen_fsm)
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=True)
+        self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = [None, None]
 
     def on_trans_9_lr2i(self, poke, button, reward_on, reward_collected):
-        self.screen_fsm = initialisation.get_screen_fsm()
-        self.task_fsm = initialisation.get_task_fsm(self.screen_fsm)
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
+        self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = [None, None]
 
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
@@ -156,8 +156,8 @@ class ExperimentFSM():
         self.last_trial = [False, None]
 
     def on_trans_13_pp2i(self, poke, button, reward_on, reward_collected):
-        self.screen_fsm = initialisation.get_screen_fsm()
-        self.task_fsm = initialisation.get_task_fsm(self.screen_fsm)
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
+        self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = [None, None]
 
     # End transition callbacks

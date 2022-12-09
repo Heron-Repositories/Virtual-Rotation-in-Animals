@@ -217,6 +217,8 @@ class ScreenFSM(StateMachine):
             self.manip_angle = 360 + self.manip_angle
         if self.manip_angle > 359:
             self.manip_angle = self.manip_angle - 359
+        if self.manip_angle == 0:
+            self.manip_angle = 1
 
     def has_man_reached_target(self):
         man_pos = self.manip_angle
