@@ -56,24 +56,16 @@ def initialise(_worker_object):
     except:
         return False
 
-    _worker_object.num_of_iters_to_update_relics_substate = 100
-    _worker_object.relic_create_parameters_df(visualisation_on=vis.visualisation_on,
-                                              task_description=task_description, speed=speed,
-                                              number_of_pellets=number_of_pellets,
-                                              wait_period=wait_period)
+    #_worker_object.num_of_iters_to_update_relics_substate = 100
+    _worker_object.savenodestate_create_parameters_df(visualisation_on=vis.visualisation_on,
+                                                      task_description=task_description, speed=speed,
+                                                      number_of_pellets=number_of_pellets,
+                                                      wait_period=wait_period)
 
     trial_initialisation = init.Initialisation(task_description=task_description, vert_or_hor='random', speed=speed,
                                                angle_dif_between_man_and_target_trap=3,
                                                time_to_target=wait_period,
                                                punish_time=7)
-
-    _worker_object.savenodestate_create_parameters_df(visualisation_on=vis.visualisation_on,
-                                                      config_script_file=config_script_file)
-    if task_type == 'Wait':
-        trial_initialisation = init.WaitInitialisation(vert_or_hor='random', speed=speed,
-                                                       angle_dif_between_man_and_target_trap=3,
-                                                       time_to_target=wait_period,
-                                                       punish_time=7)
 
     experiment_fsm = ExperimentFSM(initialisation=trial_initialisation)
     return True
@@ -119,6 +111,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     task_state = str(experiment_fsm.task_fsm.current_state)
     screen_state = str(experiment_fsm.screen_fsm.current_state)
     time_to_target = trial_initialisation.time_to_target
+
     savenodestate_update_substate_df(exp_state=exp_state,
                                      task_state=task_state,
                                      screen_state=screen_state,
@@ -136,7 +129,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
 
 def on_end_of_life():
     global vis
-    vis.end_of_life()
+    #vis.end_of_life()
     gu.accurate_delay(100)
 
 
