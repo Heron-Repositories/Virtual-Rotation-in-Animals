@@ -50,6 +50,7 @@ class ScreenFSM(StateMachine):
         # End State Variables
 
     def step(self, action):
+        #print(" State of Screen = {}".format(self.current_state.name))
         if False:
             pass
 
@@ -208,8 +209,10 @@ class ScreenFSM(StateMachine):
         # End transition callbacks
 
     def check_manip_and_rezero(self):
-        self.target_reached = self.has_man_reached_target()
-        self.trap_reached = self.has_man_reached_trap()
+        if not self.target_reached:
+            self.target_reached = self.has_man_reached_target()
+        if not self.trap_reached:
+            self.trap_reached = self.has_man_reached_trap()
         self.rezero_angle()
 
     def rezero_angle(self):
@@ -226,10 +229,11 @@ class ScreenFSM(StateMachine):
         comparator_angle = np.min([self.speed, self.angle_dif_between_man_and_target_trap])
         if np.abs(target_pos - man_pos) < comparator_angle \
                 or np.abs(target_pos - man_pos) > 360 - comparator_angle:
+            print('Success !!')
+            self.target_reached = True
             return True
         else:
             return False
-
 
     def has_man_reached_trap(self):
         man_pos = self.manip_angle
@@ -237,6 +241,8 @@ class ScreenFSM(StateMachine):
         comparator_angle = np.min([self.speed, self.angle_dif_between_man_and_target_trap])
         if np.abs(trap_pos - man_pos) < comparator_angle \
                 or np.abs(trap_pos - man_pos) > 360 - comparator_angle:
+            print('Failure !!')
+            self.trap_reached = True
             return True
         else:
             return False
