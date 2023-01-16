@@ -40,16 +40,18 @@ class ExperimentFSM(StateMachine):
         self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
         self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = None
-        self.punish_time = None
+        self.punish_time = 0
         self.reward_on_command = False
         # End State Variables
 
     def step(self, poke, button, reward_on, reward_collected):
+        #print(" State of Experiment = {}".format(self.current_state.name))
         if False:
             pass
 
         # Start conditionals
         elif self.current_state == self.state_Initialisation:
+            self.punish_time = 0
             if False:  # Initialisation
                 pass  # Initialisation
             elif poke and self.task_fsm.current_state != self.task_fsm.state_Success and self.task_fsm.current_state != self.task_fsm.state_Fail:
@@ -58,11 +60,12 @@ class ExperimentFSM(StateMachine):
         elif self.current_state == self.state_Task:
             if False:  # Task
                 pass  # Task
-            elif poke and self.task_fsm.current_state != self.task_fsm.state_Success and self.task_fsm.current_state != self.task_fsm.state_Fail:
+            elif self.task_fsm.current_state != self.task_fsm.state_Success \
+                    and self.task_fsm.current_state != self.task_fsm.state_Fail:
                 self.trans_0_t2t(poke, button, reward_on, reward_collected)
             elif self.task_fsm.current_state == self.task_fsm.state_Success:
                 self.trans_2_t2s(poke, button, reward_on, reward_collected)
-            elif self.current_state == self.state_Fail:
+            elif self.task_fsm.current_state == self.task_fsm.state_Fail:
                 self.trans_10_t2f(poke, button, reward_on, reward_collected)
         # End of Task conditional
         elif self.current_state == self.state_Success:
