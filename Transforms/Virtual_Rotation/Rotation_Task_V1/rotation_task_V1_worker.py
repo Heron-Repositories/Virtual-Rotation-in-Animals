@@ -87,7 +87,7 @@ def work_function(data, parameters):
     topic = data[0].decode('utf-8')
 
     message = data[1:]
-    message = Socket.reconstruct_array_from_bytes_message(message)
+    message = Socket.reconstruct_data_from_bytes_message(message)
 
     if 'Reward_Poke_State' in topic:
         reward_on = message[0]
