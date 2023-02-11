@@ -50,7 +50,7 @@ class ScreenFSM(StateMachine):
         # End State Variables
 
     def step(self, action):
-        #print(" State of Screen = {}".format(self.current_state.name))
+        #print("---- Starting SCREEN state = {}".format(self.current_state.name))
         if False:
             pass
 
@@ -117,6 +117,7 @@ class ScreenFSM(StateMachine):
                 self.trans_19_mccw2mcw(action)
             elif action == 'blank':
                 self.trans_20_mccw2b(action)
+        #print("---- Ending SCREEN state = {}".format(self.current_state.name))
         # End of Move_CCW conditional
         # End conditionals
 
@@ -229,7 +230,6 @@ class ScreenFSM(StateMachine):
         comparator_angle = np.min([self.speed, self.angle_dif_between_man_and_target_trap])
         if np.abs(target_pos - man_pos) < comparator_angle \
                 or np.abs(target_pos - man_pos) > 360 - comparator_angle:
-            print('Success !!')
             self.target_reached = True
             return True
         else:

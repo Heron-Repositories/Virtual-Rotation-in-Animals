@@ -45,7 +45,8 @@ class ExperimentFSM(StateMachine):
         # End State Variables
 
     def step(self, poke, button, reward_on, reward_collected):
-        #print(" State of Experiment = {}".format(self.current_state.name))
+        #print('-------------------')
+        #print("Starting EXP state = {}".format(self.current_state.name))
         if False:
             pass
 
@@ -111,6 +112,8 @@ class ExperimentFSM(StateMachine):
                 self.trans_12_pp2pp(poke, button, reward_on, reward_collected)
             elif self.punish_time >= self.initialisation.punish_time:
                 self.trans_13_pp2i(poke, button, reward_on, reward_collected)
+        #print("Ending EXP state = {}".format(self.current_state.name))
+        #print('-------------------')
         # End of PunishPeriod conditional
         # End conditionals
 
@@ -125,7 +128,7 @@ class ExperimentFSM(StateMachine):
         pass
 
     def on_trans_2_t2s(self, poke, button, reward_on, reward_collected):
-        pass
+        self.task_fsm.step(poke, button)
 
     def on_trans_5_rp2rp(self, poke, button, reward_on, reward_collected):
         pass
@@ -150,7 +153,7 @@ class ExperimentFSM(StateMachine):
         self.last_trial = [None, None]
 
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
-        pass
+        self.task_fsm.step(poke, button)
 
     def on_trans_12_pp2pp(self, poke, button, reward_on, reward_collected):
         self.punish_time += 1
