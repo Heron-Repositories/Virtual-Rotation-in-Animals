@@ -10,7 +10,7 @@ class Initialisation:
     def __init__(self, task_description='Wait', vert_or_hor='random', speed=20, angle_dif_between_man_and_target_trap=10,
                  time_to_target=0.5, punish_time=7):
         assert task_description == 'PokeAndWait' or task_description == 'PokeAndButton', \
-        print('Wrong Task {} in the Initialisation object'.format(task_description))
+            print('Wrong Task {} in the Initialisation object'.format(task_description))
         assert vert_or_hor == 'random' or vert_or_hor == 'vertical' or vert_or_hor == 'horizontal', \
             print('Wrong vert_or_hor value {} in the Initialisation object'.format(vert_or_hor))
 
@@ -43,12 +43,11 @@ class Initialisation:
         self.manip_angle = int((self.time_to_target * 10) * self.speed) if self.target_angle == 1 else \
             90 - int((self.time_to_target * 10) * self.speed)
 
-        print('Speed = {}, Time to target = {}'.format(self.speed, self.time_to_target))
+        print('Time to target = {}'.format(self.time_to_target))
         #print('Manip = {}, Target = {}, Trap = {}'.format(self.manip_angle, self.target_angle, self.trap_angle))
         #print('-------------------')
 
     def get_init_values(self, previous_success):
-
         if previous_success and self.task_description == 'PokeAndWait':
             self.time_to_target = self.time_to_target * 1.01
 
