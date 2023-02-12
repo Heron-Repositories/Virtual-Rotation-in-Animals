@@ -14,12 +14,13 @@ class Initialisation:
         assert vert_or_hor == 'random' or vert_or_hor == 'vertical' or vert_or_hor == 'horizontal', \
             print('Wrong vert_or_hor value {} in the Initialisation object'.format(vert_or_hor))
 
+        self.update_constant_seconds = 5
         self.task_description = task_description
-        self.speed = int(speed / 10)
+        self.speed = int(speed / self.update_constant_seconds)
         self.angle_dif_between_man_and_target_trap = angle_dif_between_man_and_target_trap
         self.vert_or_hor = vert_or_hor
         self.time_to_target = time_to_target
-        self.punish_time = punish_time * 10
+        self.punish_time = punish_time * self.update_constant_seconds
         self.target_angle: int
         self.trap_angle: int
         self.manip_angle: int
@@ -40,8 +41,8 @@ class Initialisation:
             self.target_angle = np.random.choice([1, 90])
             self.trap_angle = 90 if self.target_angle == 1 else 1
 
-        self.manip_angle = int((self.time_to_target * 10) * self.speed) if self.target_angle == 1 else \
-            90 - int((self.time_to_target * 10) * self.speed)
+        self.manip_angle = int((self.time_to_target * self.update_constant_seconds) * self.speed) \
+            if self.target_angle == 1 else 90 - int((self.time_to_target * self.update_constant_seconds) * self.speed)
 
         print('Time to target = {}'.format(self.time_to_target))
         #print('Manip = {}, Target = {}, Trap = {}'.format(self.manip_angle, self.target_angle, self.trap_angle))

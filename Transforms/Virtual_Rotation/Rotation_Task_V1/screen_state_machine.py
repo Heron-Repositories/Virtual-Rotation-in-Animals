@@ -241,7 +241,6 @@ class ScreenFSM(StateMachine):
         comparator_angle = np.min([self.speed, self.angle_dif_between_man_and_target_trap])
         if np.abs(trap_pos - man_pos) < comparator_angle \
                 or np.abs(trap_pos - man_pos) > 360 - comparator_angle:
-            print('Failure !!')
             self.trap_reached = True
             return True
         else:
