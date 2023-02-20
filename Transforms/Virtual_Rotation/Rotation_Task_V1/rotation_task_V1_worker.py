@@ -14,7 +14,7 @@ sys.path.insert(0, path.dirname(current_dir))
 # </editor-fold>
 
 from Heron.communication.socket_for_serialization import Socket
-from Heron import general_utils as gu
+from Heron import general_utils as gu, constants as ct
 from Heron.gui.visualisation_dpg import VisualisationDPG
 import initialisation as init
 from screen_state_machine import ScreenFSM
@@ -81,22 +81,22 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     global reward_collected
     global number_of_successful_trials
 
-    #t1 = time.perf_counter()
     try:
         vis.visualisation_on = parameters[0]
         number_of_pellets = parameters[3]
     except:
         pass
-    #t2 = time.perf_counter()
+
     topic = data[0].decode('utf-8')
 
     message = data[1:]
     message = Socket.reconstruct_data_from_bytes_message(message)
-    #t3 = time.perf_counter()
+
     if 'Reward_Poke_State' in topic:
         reward_on = message[0]
         reward_collected = message[1]
         number_of_successful_trials = message[2]
+        command_to_reward = np.array([ct.IGNORE])
 
     if 'Levers_State' in topic:
         poke = message[0]
@@ -105,14 +105,12 @@ def work_function(data, parameters, savenodestate_update_substate_df):
         #      format(message[0], message[1], reward_on, reward_collected))
         experiment_fsm.step(poke=poke, button=button, reward_on=reward_on, reward_collected=reward_collected,
                             number_of_successful_trials=number_of_successful_trials)
-        #print(experiment_fsm.current_state)
-        #print('-----------------')
-    #t4 = time.perf_counter()
+
     command_to_screen = np.array([experiment_fsm.screen_fsm.command_to_screen])
-    command_to_reward = np.array([-1])
+
     if experiment_fsm.current_state == experiment_fsm.state_Success:
         command_to_reward = np.array([number_of_pellets])
-    #t5 = time.perf_counter()
+
     exp_state = str(experiment_fsm.current_state)
     task_state = str(experiment_fsm.task_fsm.current_state)
     screen_state = str(experiment_fsm.screen_fsm.current_state)
@@ -126,12 +124,6 @@ def work_function(data, parameters, savenodestate_update_substate_df):
                                      command_to_food_poke=command_to_reward[0])
 
     result = [command_to_screen, command_to_reward]
-    #t6 = time.perf_counter()
-    #print(screen_fsm.current_state)
-    #print(task_fsm.current_state)
-    #print(result)
-    #print('----------------------------------------')
-    #print((t2-t1)*1000, (t3-t2)*1000, (t4-t3)*1000, (t5-t4)*1000, (t6-t5)*1000)
     return result
 
 
