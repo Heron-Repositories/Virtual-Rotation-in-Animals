@@ -32,6 +32,7 @@ speed: int
 number_of_pellets: int
 reward_on = False
 reward_collected = False
+number_of_successful_trials = 0
 
 
 def initialise(_worker_object):
@@ -78,6 +79,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     global experiment_fsm
     global reward_on
     global reward_collected
+    global number_of_successful_trials
 
     #t1 = time.perf_counter()
     try:
@@ -94,13 +96,15 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     if 'Reward_Poke_State' in topic:
         reward_on = message[0]
         reward_collected = message[1]
+        number_of_successful_trials = message[2]
 
     if 'Levers_State' in topic:
         poke = message[0]
         button = message[1]
         #print('poke={}, button={}, reward_on={}, reward_collected={}'.
         #      format(message[0], message[1], reward_on, reward_collected))
-        experiment_fsm.step(poke=poke, button=button, reward_on=reward_on, reward_collected=reward_collected)
+        experiment_fsm.step(poke=poke, button=button, reward_on=reward_on, reward_collected=reward_collected,
+                            number_of_successful_trials=number_of_successful_trials)
         #print(experiment_fsm.current_state)
         #print('-----------------')
     #t4 = time.perf_counter()

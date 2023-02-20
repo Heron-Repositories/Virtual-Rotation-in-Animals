@@ -8,7 +8,7 @@ import numpy as np
 
 class Initialisation:
     def __init__(self, task_description='Wait', vert_or_hor='random', speed=20, angle_dif_between_man_and_target_trap=10,
-                 time_to_target=0.5, punish_time=7):
+                 time_to_target=0.5, punish_time=7, number_of_warmup_trials=30):
         assert task_description == 'PokeAndWait' or task_description == 'PokeAndButton', \
             print('Wrong Task {} in the Initialisation object'.format(task_description))
         assert vert_or_hor == 'random' or vert_or_hor == 'vertical' or vert_or_hor == 'horizontal', \
@@ -19,7 +19,11 @@ class Initialisation:
         self.speed = int(speed / self.update_constant_seconds)
         self.angle_dif_between_man_and_target_trap = angle_dif_between_man_and_target_trap
         self.vert_or_hor = vert_or_hor
-        self.time_to_target = time_to_target
+        self.main_time_to_target = time_to_target
+        self.warmup_time_to_target = 0.2
+        self.time_to_target = self.warmup_time_to_target
+        self.number_of_warmup_trials = number_of_warmup_trials
+        self.warmup_ttt_rampup = (self.main_time_to_target - self.warmup_time_to_target) / self.number_of_warmup_trials
         self.punish_time = punish_time * self.update_constant_seconds
         self.target_angle: int
         self.trap_angle: int
@@ -27,7 +31,7 @@ class Initialisation:
 
         self.setup_angles()
 
-        self.screen_fsm = self.get_screen_fsm(previous_success=False)
+        self.screen_fsm = self.get_screen_fsm(previous_success=False, number_of_successful_trials=0)
         self.task_fsm = self.get_task_fsm()
 
     def setup_angles(self):
@@ -48,18 +52,22 @@ class Initialisation:
         #print('Manip = {}, Target = {}, Trap = {}'.format(self.manip_angle, self.target_angle, self.trap_angle))
         #print('-------------------')
 
-    def get_init_values(self, previous_success):
+    def get_init_values(self, previous_success, number_of_successful_trials):
         if previous_success and self.task_description == 'PokeAndWait':
-            self.time_to_target = self.time_to_target * 1.01
+            print(number_of_successful_trials, self.warmup_ttt_rampup)
+            if number_of_successful_trials < self.number_of_warmup_trials:
+                self.time_to_target = self.warmup_time_to_target + number_of_successful_trials * self.warmup_ttt_rampup
+            else:
+                self.time_to_target = self.time_to_target * 1.01
 
         self.setup_angles()
 
         return self.target_angle, self.trap_angle, int(self.manip_angle), \
                self.speed, self.angle_dif_between_man_and_target_trap
 
-    def get_screen_fsm(self, previous_success):
+    def get_screen_fsm(self, previous_success, number_of_successful_trials):
         target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap = \
-            self.get_init_values(previous_success)
+            self.get_init_values(previous_success, number_of_successful_trials)
         self.screen_fsm = ScreenFSM(target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap)
 
         return self.screen_fsm
