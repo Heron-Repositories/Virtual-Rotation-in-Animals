@@ -101,6 +101,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     if 'Levers_State' in topic:
         poke = message[0]
         button = message[1]
+        command_to_reward = np.array([-1])
         #print('poke={}, button={}, reward_on={}, reward_collected={}'.
         #      format(message[0], message[1], reward_on, reward_collected))
         experiment_fsm.step(poke=poke, button=button, reward_on=reward_on, reward_collected=reward_collected,
