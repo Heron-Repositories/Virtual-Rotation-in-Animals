@@ -37,14 +37,14 @@ class ExperimentFSM(StateMachine):
         super().__init__()
         # Start State Variables
         self.initialisation = initialisation
-        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False, number_of_successful_trials=0)
         self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = None
         self.punish_time = 0
         self.reward_on_command = False
         # End State Variables
 
-    def step(self, poke, button, reward_on, reward_collected):
+    def step(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         #print('-------------------')
         #print("Starting EXP state = {}".format(self.current_state.name))
         if False:
@@ -91,13 +91,13 @@ class ExperimentFSM(StateMachine):
             if False:  # GotReward
                 pass  # GotReward
             elif True:
-                self.trans_8_gr2i(poke, button, reward_on, reward_collected)
+                self.trans_8_gr2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
         # End of GotReward conditional
         elif self.current_state == self.state_LostReward:
             if False:  # LostReward
                 pass  # LostReward
             elif True:
-                self.trans_9_lr2i(poke, button, reward_on, reward_collected)
+                self.trans_9_lr2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
         # End of LostReward conditional
         elif self.current_state == self.state_Fail:
             if False:  # Fail
@@ -111,7 +111,7 @@ class ExperimentFSM(StateMachine):
             elif self.punish_time < self.initialisation.punish_time:
                 self.trans_12_pp2pp(poke, button, reward_on, reward_collected)
             elif self.punish_time >= self.initialisation.punish_time:
-                self.trans_13_pp2i(poke, button, reward_on, reward_collected)
+                self.trans_13_pp2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
         #print("Ending EXP state = {}".format(self.current_state.name))
         #print('-------------------')
         # End of PunishPeriod conditional
@@ -142,13 +142,15 @@ class ExperimentFSM(StateMachine):
     def on_trans_7_rp2lr(self, poke, button, reward_on, reward_collected):
         self.last_trial = [True, False]
 
-    def on_trans_8_gr2i(self, poke, button, reward_on, reward_collected):
-        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=True)
+    def on_trans_8_gr2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=True,
+                                                             number_of_successful_trials=number_of_successful_trials)
         self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = [None, None]
 
-    def on_trans_9_lr2i(self, poke, button, reward_on, reward_collected):
-        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
+    def on_trans_9_lr2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False,
+                                                             number_of_successful_trials=number_of_successful_trials)
         self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = [None, None]
 
@@ -161,8 +163,9 @@ class ExperimentFSM(StateMachine):
     def on_trans_11_f2pp(self, poke, button, reward_on, reward_collected):
         self.last_trial = [False, None]
 
-    def on_trans_13_pp2i(self, poke, button, reward_on, reward_collected):
-        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False)
+    def on_trans_13_pp2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
+        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False,
+                                                             number_of_successful_trials=number_of_successful_trials)
         self.task_fsm = self.initialisation.get_task_fsm()
         self.last_trial = [None, None]
 
