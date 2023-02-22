@@ -62,7 +62,7 @@ def initialise(_worker_object):
                                                       task_description=task_description, speed=speed,
                                                       number_of_pellets=number_of_pellets,
                                                       wait_period=wait_period)
-    _worker_object.num_of_iters_to_update_savenodestate_substate = -1
+    _worker_object.num_of_iters_to_update_savenodestate_substate = 1800
 
     trial_initialisation = init.Initialisation(task_description=task_description, vert_or_hor='random', speed=speed,
                                                angle_dif_between_man_and_target_trap=3,
