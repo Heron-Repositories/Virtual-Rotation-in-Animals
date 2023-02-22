@@ -54,7 +54,7 @@ class Initialisation:
 
     def get_init_values(self, previous_success, number_of_successful_trials):
         if previous_success and self.task_description == 'PokeAndWait':
-            print(number_of_successful_trials, self.warmup_ttt_rampup)
+
             if number_of_successful_trials < self.number_of_warmup_trials:
                 self.time_to_target = self.warmup_time_to_target + number_of_successful_trials * self.warmup_ttt_rampup
             else:
