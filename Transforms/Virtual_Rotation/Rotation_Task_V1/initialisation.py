@@ -8,7 +8,7 @@ import numpy as np
 
 class Initialisation:
     def __init__(self, task_description='Wait', vert_or_hor='random', speed=10, angle_dif_between_man_and_target_trap=10,
-                 time_to_target=0.5, punish_time=7, number_of_warmup_trials=3):
+                 time_to_target=0.5, punish_time=7, number_of_warmup_trials=30):
         assert task_description == 'PokeAndWait' or task_description == 'PokeAndButton', \
             print('Wrong Task {} in the Initialisation object'.format(task_description))
         assert vert_or_hor == 'random' or vert_or_hor == 'vertical' or vert_or_hor == 'horizontal', \
