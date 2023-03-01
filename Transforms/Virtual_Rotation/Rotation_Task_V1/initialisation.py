@@ -9,7 +9,9 @@ import numpy as np
 class Initialisation:
     def __init__(self, task_description='Wait', vert_or_hor='random', speed=10, angle_dif_between_man_and_target_trap=10,
                  time_to_target=0.5, punish_time=7, number_of_warmup_trials=30):
-        assert task_description == 'PokeAndWait' or task_description == 'PokeAndButton', \
+        assert task_description == 'PokeAndWait' \
+               or task_description == 'PokeAndButton' \
+               or task_description == 'PokeAndWaitRandom', \
             print('Wrong Task {} in the Initialisation object'.format(task_description))
         assert vert_or_hor == 'random' or vert_or_hor == 'vertical' or vert_or_hor == 'horizontal', \
             print('Wrong vert_or_hor value {} in the Initialisation object'.format(vert_or_hor))
@@ -53,11 +55,14 @@ class Initialisation:
         #print('-------------------')
 
     def get_init_values(self, previous_success, number_of_successful_trials):
-        if previous_success and self.task_description == 'PokeAndWait':
+        if previous_success and (self.task_description == 'PokeAndWait' or self.task_description == 'PokeAndWaitRandom'):
             if number_of_successful_trials <= self.number_of_warmup_trials:
                 self.time_to_target = self.warmup_time_to_target + number_of_successful_trials * self.warmup_ttt_rampup
             else:
-                self.time_to_target = self.time_to_target * 1.01
+                if self.task_description == 'PokeAndWait':
+                    self.time_to_target = self.time_to_target * 1.01
+                elif self.task_description == 'PokeAndWaitRandom':
+                    self.time_to_target = (self.main_time_to_target - 0.2) * np.random.random_sample() + 0.2
 
         self.setup_angles()
 
@@ -72,7 +77,7 @@ class Initialisation:
         return self.screen_fsm
 
     def get_task_fsm(self):
-        if self.task_description == 'PokeAndWait':
+        if self.task_description == 'PokeAndWait' or self.task_description == 'PokeAndWaitRandom':
             self.task_fsm = WaitToMatchTaskFSM(screen_fsm=self.screen_fsm)
         elif self.task_description == 'PokeAndButton':
             self.task_fsm = ButtonToMatchWithTrapTaskFSM(screen_fsm=self.screen_fsm)
