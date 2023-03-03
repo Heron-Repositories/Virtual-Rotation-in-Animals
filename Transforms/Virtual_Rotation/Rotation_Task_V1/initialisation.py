@@ -8,7 +8,7 @@ import numpy as np
 
 class Initialisation:
     def __init__(self, task_description='Wait', vert_or_hor='random', speed=10, angle_dif_between_man_and_target_trap=10,
-                 time_to_target=0.5, punish_time=7, number_of_warmup_trials=30):
+                 time_to_target=0.5, punish_time=2, number_of_warmup_trials=2):
         assert task_description == 'PokeAndWait' \
                or task_description == 'PokeAndButton' \
                or task_description == 'PokeAndWaitRandom', \
@@ -48,7 +48,7 @@ class Initialisation:
             self.trap_angle = 90 if self.target_angle == 1 else 1
 
         self.manip_angle = int((self.time_to_target * self.update_constant_seconds) * self.speed) \
-            if self.target_angle == 1 else 90 - int((self.time_to_target * self.update_constant_seconds) * self.speed)
+            if self.target_angle == 1 else 90 + int((self.time_to_target * self.update_constant_seconds) * self.speed)
 
         print('Time to target = {}'.format(self.time_to_target))
         #print('Manip = {}, Target = {}, Trap = {}'.format(self.manip_angle, self.target_angle, self.trap_angle))
