@@ -228,7 +228,6 @@ class ScreenFSM(StateMachine):
         man_pos = self.manip_angle
         target_pos = self.target_angle
         comparator_angle = np.max([self.speed, self.angle_dif_between_man_and_target_trap])
-        print(target_pos, man_pos, np.abs(target_pos - man_pos), comparator_angle)
         if np.abs(target_pos - man_pos) < comparator_angle \
                 or np.abs(target_pos - man_pos) > 360 - comparator_angle:
             self.target_reached = True
