@@ -62,7 +62,7 @@ class Initialisation:
                 if self.task_description == 'PokeAndWait':
                     self.time_to_target = self.time_to_target * 1.01
                 elif self.task_description == 'PokeAndWaitRandom':
-                    self.time_to_target = (self.main_time_to_target - 0.2) * np.random.random_sample() + 0.2
+                    self.time_to_target = (self.main_time_to_target - 1) * np.random.random_sample() + 1
 
         self.setup_angles()
 
