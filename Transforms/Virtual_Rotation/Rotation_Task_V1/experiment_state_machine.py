@@ -26,8 +26,8 @@ class ExperimentFSM(StateMachine):
     trans_6_rp2gr = state_RewardPeriod.to(state_GotReward)
     trans_7_rp2lr = state_RewardPeriod.to(state_LostReward)
     trans_8_gr2i = state_GotReward.to(state_Initialisation)
-    #trans_9_lr2i = state_LostReward.to(state_Initialisation)
-    trans_9_lrpp = state_LostReward.to(state_PunishPeriod)
+    #trans_9_lr22i = state_LostReward.to(state_Initialisation)
+    trans_9_lr2pp = state_LostReward.to(state_PunishPeriod)
     trans_10_t2f = state_Task.to(state_Fail)
     trans_12_pp2pp = state_PunishPeriod.to(state_PunishPeriod)
     trans_11_f2pp = state_Fail.to(state_PunishPeriod)
@@ -99,7 +99,7 @@ class ExperimentFSM(StateMachine):
                 pass  # LostReward
             elif True:
                 #self.trans_9_lr2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
-                self.trans_9_lrpp(poke, button, reward_on, reward_collected, number_of_successful_trials)
+                self.trans_9_lr2pp(poke, button, reward_on, reward_collected, number_of_successful_trials)
         # End of LostReward conditional
         elif self.current_state == self.state_Fail:
             if False:  # Fail
@@ -158,8 +158,9 @@ class ExperimentFSM(StateMachine):
         self.last_trial = [None, None]
     '''
 
-    def on_trans_9_lrpp(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
-        self.last_trial = [None, None]
+    def on_trans_9_lr2pp(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
+        self.last_trial = [False, None]
+        self.screen_fsm.step(action='blank')
 
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
         self.task_fsm.step(poke, button)
