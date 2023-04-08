@@ -227,7 +227,7 @@ class ScreenFSM(StateMachine):
     def has_man_reached_target(self):
         man_pos = self.manip_angle
         target_pos = self.target_angle
-        comparator_angle = np.min([self.speed, self.angle_dif_between_man_and_target_trap])
+        comparator_angle = np.max([self.speed, self.angle_dif_between_man_and_target_trap])
         if np.abs(target_pos - man_pos) < comparator_angle \
                 or np.abs(target_pos - man_pos) > 360 - comparator_angle:
             self.target_reached = True
@@ -238,7 +238,7 @@ class ScreenFSM(StateMachine):
     def has_man_reached_trap(self):
         man_pos = self.manip_angle
         trap_pos = self.trap_angle
-        comparator_angle = np.min([self.speed, self.angle_dif_between_man_and_target_trap])
+        comparator_angle = np.max([self.speed, self.angle_dif_between_man_and_target_trap])
         if np.abs(trap_pos - man_pos) < comparator_angle \
                 or np.abs(trap_pos - man_pos) > 360 - comparator_angle:
             self.trap_reached = True

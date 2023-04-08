@@ -48,7 +48,7 @@ class Initialisation:
             self.trap_angle = 90 if self.target_angle == 1 else 1
 
         self.manip_angle = int((self.time_to_target * self.update_constant_seconds) * self.speed) \
-            if self.target_angle == 1 else 90 - int((self.time_to_target * self.update_constant_seconds) * self.speed)
+            if self.target_angle == 1 else 90 + int((self.time_to_target * self.update_constant_seconds) * self.speed)
 
         print('Time to target = {}'.format(self.time_to_target))
         #print('Manip = {}, Target = {}, Trap = {}'.format(self.manip_angle, self.target_angle, self.trap_angle))
@@ -62,7 +62,7 @@ class Initialisation:
                 if self.task_description == 'PokeAndWait':
                     self.time_to_target = self.time_to_target * 1.01
                 elif self.task_description == 'PokeAndWaitRandom':
-                    self.time_to_target = (self.main_time_to_target - 0.2) * np.random.random_sample() + 0.2
+                    self.time_to_target = (self.main_time_to_target - 1) * np.random.random_sample() + 1
 
         self.setup_angles()
 
