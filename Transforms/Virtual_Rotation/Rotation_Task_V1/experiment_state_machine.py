@@ -110,7 +110,7 @@ class ExperimentFSM(StateMachine):
         elif self.current_state == self.state_PunishPeriod:
             if False:  # PunishPeriod
                 pass  # PunishPeriod
-            elif self.punish_time < self.initialisation.punish_time:
+            elif self.punish_time < self.initialisation.punish_time or poke:
                 self.trans_12_pp2pp(poke, button, reward_on, reward_collected)
             elif self.punish_time >= self.initialisation.punish_time:
                 self.trans_13_pp2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
