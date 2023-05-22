@@ -147,7 +147,7 @@ class ExperimentFSM(StateMachine):
     def on_trans_8_gr2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=True,
                                                              number_of_successful_trials=number_of_successful_trials)
-        self.task_fsm = self.initialisation.get_task_fsm()
+        self.task_fsm = self.initialisation.get_task_fsm(number_of_successful_trials=number_of_successful_trials)
         self.last_trial = [None, None]
 
     '''
@@ -174,7 +174,7 @@ class ExperimentFSM(StateMachine):
     def on_trans_13_pp2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False,
                                                              number_of_successful_trials=number_of_successful_trials)
-        self.task_fsm = self.initialisation.get_task_fsm()
+        self.task_fsm = self.initialisation.get_task_fsm(number_of_successful_trials=number_of_successful_trials)
         self.last_trial = [None, None]
 
     # End transition callbacks

@@ -111,18 +111,26 @@ def work_function(data, parameters, savenodestate_update_substate_df):
 
     if experiment_fsm.current_state == experiment_fsm.state_Success:
         command_to_reward = np.array([number_of_pellets])
+        if experiment_fsm.screen_fsm.catch_trial and not experiment_fsm.screen_fsm.reward_on_catch_trial:
+            #  If the trial is a catch one then and the rat 'succeeded' then register it as a success but reward only
+            #  50% of the times
+            command_to_reward = np.array([0])
 
     exp_state = str(experiment_fsm.current_state)
     task_state = str(experiment_fsm.task_fsm.current_state)
     screen_state = str(experiment_fsm.screen_fsm.current_state)
     time_to_target = trial_initialisation.time_to_target
+    catch_trial = trial_initialisation.catch_trial
+    speed = trial_initialisation.speed
 
     savenodestate_update_substate_df(exp_state=exp_state,
                                      task_state=task_state,
                                      screen_state=screen_state,
                                      time_to_target=time_to_target,
                                      command_to_screens=command_to_screen[0],
-                                     command_to_food_poke=command_to_reward[0])
+                                     command_to_food_poke=command_to_reward[0],
+                                     catch_trial=catch_trial,
+                                     speed=speed)
 
     result = [command_to_screen, command_to_reward]
     return result

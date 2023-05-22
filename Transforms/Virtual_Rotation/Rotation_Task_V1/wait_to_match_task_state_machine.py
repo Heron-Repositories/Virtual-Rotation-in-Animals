@@ -25,7 +25,6 @@ class WaitToMatchTaskFSM(StateMachine):
         super().__init__()
         # Start State Variables
         self.screen_fsm = screen_fsm
-        #self.success = False
         # End State Variables
 
     def step(self, poke, button):
@@ -75,17 +74,14 @@ class WaitToMatchTaskFSM(StateMachine):
     def on_trans_2_p2p(self, poke):
         manip_angle = self.screen_fsm.manip_angle
         target_angle = self.screen_fsm.target_angle
-        if manip_angle - target_angle > 0:
-            self.screen_fsm.step(action='move_cw')
-        elif manip_angle - target_angle < 0:
-            self.screen_fsm.step(action='move_ccw')
+        action = 'move_cw' if manip_angle - target_angle > 0 else 'move_ccw'
+        self.screen_fsm.step(action=action)
 
     def on_trans_1_s2p(self, poke):
         self.screen_fsm.step(action='show_ttm')
 
     def on_trans_3_p2suc(self, poke):
          self.screen_fsm.step(action='show_ttm')
-         #self.success = True
 
     def on_trans_4_p2f(self, poke):
         self.screen_fsm.step(action='blank')

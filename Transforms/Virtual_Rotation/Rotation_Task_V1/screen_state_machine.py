@@ -36,20 +36,32 @@ class ScreenFSM(StateMachine):
 
     # End Transitions
 
-    def __init__(self, target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap):
+    def __init__(self, target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap,
+                 catch_trial=False):
         super().__init__()
         # Start State Variables
         self.target_angle = target_angle
         self.trap_angle = trap_angle
+        self.initial_manip_angle = manip_angle
         self.manip_angle = manip_angle
+        self.visible_manip_angle = manip_angle
         self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
         self.speed = speed
         self.target_reached = False
         self.trap_reached = False
         self.angle_dif_between_man_and_target_trap = angle_dif_between_man_and_target_trap
-        # End State Variables
+        self.catch_trial = catch_trial
+        self.reward_on_catch_trial = True
+        if self.catch_trial:
+            # Set the reward_on_catch_trial to reward only 50% of the times (it is read in the worker script)
+            self.reward_on_catch_trial = True if np.random.random() > 0.5 else False
+            print('CATCH TRIAL', self.reward_on_catch_trial)
+            # End State Variables
 
     def step(self, action):
+
+        self.get_visible_manip_angle()
+
         #print("---- Starting SCREEN state = {}".format(self.current_state.name))
         if False:
             pass
@@ -126,14 +138,14 @@ class ScreenFSM(StateMachine):
         self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
 
     def on_trans_3_stiil2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
 
     def on_trans_6_c2c(self, action):
         self.command_to_screen = 'Ignore'
 
     def on_trans_1_b2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
 
     def on_trans_2_still2b(self, action):
@@ -147,12 +159,12 @@ class ScreenFSM(StateMachine):
 
     def on_trans_7_still2mcw(self, action):
         self.manip_angle -= self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
         self.check_manip_and_rezero()
 
     def on_trans_8_cw2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
 
     def on_trans_9_mcw2c(self, action):
@@ -163,7 +175,7 @@ class ScreenFSM(StateMachine):
 
     def on_trans_11_mcw2mcw(self, action):
         self.manip_angle -= self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
         self.check_manip_and_rezero()
 
@@ -172,7 +184,7 @@ class ScreenFSM(StateMachine):
 
     def on_trans_13_ccw2ccw(self, action):
         self.manip_angle += self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
         self.check_manip_and_rezero()
 
@@ -181,12 +193,12 @@ class ScreenFSM(StateMachine):
 
     def on_trans_15_still2mccw(self, action):
         self.manip_angle += self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
         self.check_manip_and_rezero()
 
     def on_trans_16_mccw2still(self, action):
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
 
     def on_trans_17_mccw2c(self, action):
@@ -194,13 +206,13 @@ class ScreenFSM(StateMachine):
 
     def on_trans_18_mcw2mccw(self, action):
         self.manip_angle += self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
         self.check_manip_and_rezero()
 
     def on_trans_19_mccw2mcw(self, action):
         self.manip_angle -= self.speed
-        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.manip_angle,
+        self.command_to_screen = 'Cue=0, Manipulandum={}, Target={}, Trap={}'.format(self.visible_manip_angle,
                                                                                      self.target_angle, self.trap_angle)
         self.check_manip_and_rezero()
 
@@ -208,6 +220,14 @@ class ScreenFSM(StateMachine):
         self.command_to_screen = 'Cue=0, Manipulandum=0, Target=0, Trap=0'
 
         # End transition callbacks
+
+    def get_visible_manip_angle(self):
+        """
+        If the trial is a catch one then keep the angle shown to the initial one (the mainpulandum doesn't appear to move)
+        but still run proper calculations with the manip_angle to see if the manipulandum would have reached the target
+        :return:
+        """
+        self.visible_manip_angle = self.initial_manip_angle if self.catch_trial else self.manip_angle
 
     def check_manip_and_rezero(self):
         if not self.target_reached:
