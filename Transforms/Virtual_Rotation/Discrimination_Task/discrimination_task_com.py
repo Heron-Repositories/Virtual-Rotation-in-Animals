@@ -24,7 +24,8 @@ ParameterNames = ['Visualisation', 'Objects Types', 'Number of Pellets']
 
 ParameterTypes = ['bool', 'list', 'int']
 
-ParametersDefaultValues = [False, ['Checkered', 'White', 'Black', 'Checkered & White', 'Checkered, White & Black'], 1]
+ParametersDefaultValues = [False, ['Checkered', 'White', 'Black', 'Checkered & White', 'Checkered & Black',
+                           'Black & White','Checkered, White & Black'], 1]
 
 WorkerDefaultExecutable = os.path.join(os.path.dirname(Exec), 'discrimination_task_worker.py')
 

@@ -15,18 +15,32 @@ class Initialisation:
         self.screen_fsm = self.get_screen_fsm(previous_success=False, number_of_successful_trials=0)
         self.task_fsm = self.get_task_fsm(number_of_successful_trials=0)
 
-    def get_init_values(self):
 
-        
+    def get_object_positions(self):
 
-        return
+        possibilities = np.zeros(10)
+        if 'Checkered' in self.objects_types:
+            possibilities[[1, 4, 7]] = 1
+        if 'White' in self.objects_types:
+            possibilities[[2, 5, 8]] = 1
+        if 'Black' in self.objects_types:
+            possibilities[[3, 6, 9]] = 1
+
+        type_of_line = np.argmax(np.random.random(3)*possibilities[1:4])
+        type_of_not_line = np.argmax(np.random.random(6) * possibilities[4:])
+        line_position = 400 * np.sign(np.random.random() - 0.5)
+        other_position = - line_position
+
+        positions = np.zeros(10)
+        positions[type_of_line + 1] = line_position
+        positions[type_of_not_line + 4] = other_position
+
+        return positions
 
     def get_screen_fsm(self, previous_success, number_of_successful_trials):
-        target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap = \
-            self.get_init_values()
+        positions = self.get_object_positions()
 
-        self.screen_fsm = ScreenFSM(target_angle, trap_angle, manip_angle, speed, angle_dif_between_man_and_target_trap,
-                                    catch_trial=self.catch_trial)
+        self.screen_fsm = ScreenFSM(show_objects_at_positions=positions)
 
         return self.screen_fsm
 

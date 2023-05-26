@@ -13,12 +13,13 @@ class DiscriminateObjectsTaskFSM(StateMachine):
 
     # Start Transitions
     trans_0_st2st = state_Wait_to_Start.to(state_Wait_to_Start)
-    trans_2_p2p = state_Wait_in_Poke.to(state_Wait_in_Poke)
     trans_1_s2p = state_Wait_to_Start.to(state_Wait_in_Poke)
+    trans_2_p2p = state_Wait_in_Poke.to(state_Wait_in_Poke)
     trans_3_p2suc = state_Wait_in_Poke.to(state_Success)
     trans_4_p2f = state_Wait_in_Poke.to(state_Fail)
-    trans_5_s2ws = state_Success.to(state_Wait_to_Start)
-    trans_6_f2ws = state_Fail.to(state_Wait_to_Start)
+    trans_5_p2st = state_Wait_in_Poke.to(state_Wait_to_Start)
+    trans_6_s2ws = state_Success.to(state_Wait_to_Start)
+    trans_7_f2ws = state_Fail.to(state_Wait_to_Start)
     # End Transitions
 
     def __init__(self, screen_fsm):
@@ -44,12 +45,14 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         elif self.current_state == self.state_Wait_in_Poke:
             if False:  # Wait_in_Poke
                 pass  # Wait_in_Poke
-            elif poke and not self.screen_fsm.target_reached:
+            elif poke and not button:
                 self.trans_2_p2p(poke)
-            elif poke and self.screen_fsm.target_reached:
-                self.trans_3_p2suc(poke)
-            elif not poke:
-                self.trans_4_p2f(poke)
+            elif poke and button:
+                if (button > 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] > 0)) or \
+                        (button < 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] < 0)):
+                    self.trans_3_p2suc(poke)
+                else:
+                    self.trans_4_p2f(poke)
         # End of Wait_in_Poke conditional
         elif self.current_state == self.state_Success:
             if False:  # Success
@@ -71,25 +74,25 @@ class DiscriminateObjectsTaskFSM(StateMachine):
     def on_trans_0_st2st(self, poke):
         self.screen_fsm.step(action='blank')
 
-    def on_trans_2_p2p(self, poke):
-        manip_angle = self.screen_fsm.manip_angle
-        target_angle = self.screen_fsm.target_angle
-        action = 'move_cw' if manip_angle - target_angle > 0 else 'move_ccw'
-        self.screen_fsm.step(action=action)
-
     def on_trans_1_s2p(self, poke):
-        self.screen_fsm.step(action='show_ttm')
+        self.screen_fsm.step(action='show_objects')
+
+    def on_trans_2_p2p(self, poke):
+        self.screen_fsm.step(action='show_objects')
 
     def on_trans_3_p2suc(self, poke):
-         self.screen_fsm.step(action='show_ttm')
+         self.screen_fsm.step(action='blank')
 
     def on_trans_4_p2f(self, poke):
         self.screen_fsm.step(action='blank')
 
-    def on_trans_5_s2ws(self, poke):
+    def on_trans_5_p2st(self, poke):
         self.screen_fsm.step(action='blank')
 
-    def on_trans_6_f2ws(self, poke):
+    def on_trans_6_s2ws(self, poke):
+        self.screen_fsm.step(action='blank')
+
+    def on_trans_7_f2ws(self, poke):
         self.screen_fsm.step(action='blank')
 
     # End transition callbacks

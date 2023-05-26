@@ -97,7 +97,6 @@ class ExperimentFSM(StateMachine):
             if False:  # LostReward
                 pass  # LostReward
             elif True:
-                #self.trans_9_lr2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
                 self.trans_9_lr2pp(poke, button, reward_on, reward_collected, number_of_successful_trials)
         # End of LostReward conditional
         elif self.current_state == self.state_Fail:

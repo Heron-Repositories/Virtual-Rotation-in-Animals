@@ -18,13 +18,13 @@ from Heron import general_utils as gu, constants as ct
 from Heron.gui.visualisation_dpg import VisualisationDPG
 import initialisation as init
 from screen_state_machine import ScreenFSM
-from wait_to_match_task_state_machine import WaitToMatchTaskFSM
+from discriminate_objects_task_state_machine import DiscriminateObjectsTaskFSM
 from experiment_state_machine import ExperimentFSM
 
 config_script_file: str
 vis: VisualisationDPG
 screen_fsm: ScreenFSM
-task_fsm: WaitToMatchTaskFSM
+task_fsm: DiscriminateObjectsTaskFSM
 experiment_fsm: ExperimentFSM
 trial_initialisation: init.Initialisation
 object_types: str
@@ -37,7 +37,7 @@ number_of_successful_trials = 0
 def initialise(_worker_object):
     global vis
     global trial_initialisation
-    global object_types
+    global objects_types
     global number_of_pellets
     global experiment_fsm
 
@@ -49,17 +49,17 @@ def initialise(_worker_object):
     try:
         parameters = _worker_object.parameters
         vis.visualisation_on = parameters[0]
-        object_types = parameters[1]
+        objects_types = parameters[1]
         number_of_pellets = parameters[2]
     except:
         return False
 
     _worker_object.savenodestate_create_parameters_df(visualisation_on=vis.visualisation_on,
-                                                      task_description=object_types,
+                                                      task_description=objects_types,
                                                       number_of_pellets=number_of_pellets)
     _worker_object.num_of_iters_to_update_savenodestate_substate = 1800
 
-    trial_initialisation = init.Initialisation(object_types=object_types,
+    trial_initialisation = init.Initialisation(objects_types=objects_types,
                                                punish_time=7)
 
     experiment_fsm = ExperimentFSM(initialisation=trial_initialisation)
