@@ -23,13 +23,25 @@ class ScreenFSM(StateMachine):
     # End Transitions
 
     def __init__(self, show_objects_at_positions):
+        """
+        The Communication protocol is:
+        Cue=xRy,CheckeredLine=xRy, WhiteLine=xRy, BlackLine=xRy, CheckeredCircle=xRy,
+        WhiteCircle=xRy, BlackCircle=xRy, CheckeredSquare=xRy, WhiteSquare=xRy, BlackSquare=xRy
+
+        where x is the position (between -700 and 700) and y is the rotation in degrees
+
+        :param show_objects_at_positions:
+        """
         super().__init__()
         # Start State Variables
         self.hide_objects = [0]*10
         self.show_objects_at_positions = show_objects_at_positions
-        self.show_cue = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        self.command_to_screen = 'Cue={}, CLine={}, WLine={}, BLine={}, CCircle={}, WCircle={}, BCircle={}, ' \
-                                 'CSquare={}, WSquare={}, BSquare={}'
+        self.show_cue = [1, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                         0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.command_to_screen = 'Cue={0}R{10}, ' \
+                                 'CheckeredLine={1}R{11}, WhiteLine={2}R{12}, BlackLine={3}R{13}, ' \
+                                 'CheckeredCircle={4}R{14}, WhiteCircle={5}R{15}, BlackCircle={6}R{16}, ' \
+                                 'CheckeredSquare={7}R{17}, WhiteSquare={8}R{18}, BlackSquare={9}R{19}'
 
     def step(self, action):
         #print("---- Starting SCREEN state = {}".format(self.current_state.name))
