@@ -15,7 +15,7 @@ Exec = os.path.abspath(__file__)
 """
 Properties of the generated Node
 """
-BaseName = 'Rotation Task V1'
+BaseName = 'Discrimination Task'
 NodeAttributeNames = ['Parameters', 'Reward Poke State', 'Levers State', 'Command to Screen', 'Command to Reward']
 
 NodeAttributeType = ['Static', 'Input', 'Input', 'Output', 'Output']
