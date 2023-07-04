@@ -42,7 +42,7 @@ class Initialisation:
         return positions_and_rotations
 
     def get_screen_fsm(self, previous_success, number_of_successful_trials):
-        positions_and_rotations = self.get_object_positions()
+        positions_and_rotations = self.get_object_positions_and_rotations()
 
         self.screen_fsm = ScreenFSM(show_objects_at_positions=positions_and_rotations)
 

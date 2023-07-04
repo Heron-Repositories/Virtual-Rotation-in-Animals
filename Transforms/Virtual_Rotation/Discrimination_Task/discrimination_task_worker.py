@@ -116,6 +116,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
                                      command_to_food_poke=command_to_reward[0])
 
     result = [command_to_screen, command_to_reward]
+    print(result)
     return result
 
 

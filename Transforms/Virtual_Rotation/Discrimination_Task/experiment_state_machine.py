@@ -19,17 +19,17 @@ class ExperimentFSM(StateMachine):
     # Start Transitions
     trans_0_t2t = state_Task.to(state_Task)
     trans_1_i2t = state_Initialisation.to(state_Task)
-    trans_3_s2s = state_Success.to(state_Success)
     trans_2_t2s = state_Task.to(state_Success)
-    trans_5_rp2rp = state_RewardPeriod.to(state_RewardPeriod)
+    trans_3_s2s = state_Success.to(state_Success)
     trans_4_s2rp = state_Success.to(state_RewardPeriod)
+    trans_5_rp2rp = state_RewardPeriod.to(state_RewardPeriod)
     trans_6_rp2gr = state_RewardPeriod.to(state_GotReward)
     trans_7_rp2lr = state_RewardPeriod.to(state_LostReward)
     trans_8_gr2i = state_GotReward.to(state_Initialisation)
     trans_9_lr2pp = state_LostReward.to(state_PunishPeriod)
     trans_10_t2f = state_Task.to(state_Fail)
-    trans_12_pp2pp = state_PunishPeriod.to(state_PunishPeriod)
     trans_11_f2pp = state_Fail.to(state_PunishPeriod)
+    trans_12_pp2pp = state_PunishPeriod.to(state_PunishPeriod)
     trans_13_pp2i = state_PunishPeriod.to(state_Initialisation)
     # End Transitions
 
@@ -45,8 +45,8 @@ class ExperimentFSM(StateMachine):
         # End State Variables
 
     def step(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
-        #print('-------------------')
-        #print("Starting EXP state = {}".format(self.current_state.name))
+        print('-------------------')
+        print("Starting EXP state = {}".format(self.current_state.name))
         if False:
             pass
 
@@ -112,8 +112,8 @@ class ExperimentFSM(StateMachine):
                 self.trans_12_pp2pp(poke, button, reward_on, reward_collected)
             elif self.punish_time >= self.initialisation.punish_time:
                 self.trans_13_pp2i(poke, button, reward_on, reward_collected, number_of_successful_trials)
-        #print("Ending EXP state = {}".format(self.current_state.name))
-        #print('-------------------')
+        print("Ending EXP state = {}".format(self.current_state.name))
+        print('-------------------')
         # End of PunishPeriod conditional
         # End conditionals
 
@@ -124,17 +124,17 @@ class ExperimentFSM(StateMachine):
     def on_trans_1_i2t(self, poke, button, reward_on, reward_collected):
         self.task_fsm.step(poke, button)
 
-    def on_trans_3_s2s(self, poke, button, reward_on, reward_collected):
-        pass
-
     def on_trans_2_t2s(self, poke, button, reward_on, reward_collected):
         self.task_fsm.step(poke, button)
 
-    def on_trans_5_rp2rp(self, poke, button, reward_on, reward_collected):
+    def on_trans_3_s2s(self, poke, button, reward_on, reward_collected):
         pass
 
     def on_trans_4_s2rp(self, poke, button, reward_on, reward_collected):
         self.last_trial = [True, None]
+
+    def on_trans_5_rp2rp(self, poke, button, reward_on, reward_collected):
+        pass
 
     def on_trans_6_rp2gr(self, poke, button, reward_on, reward_collected):
         self.last_trial = [True, True]
@@ -148,14 +148,6 @@ class ExperimentFSM(StateMachine):
         self.task_fsm = self.initialisation.get_task_fsm(number_of_successful_trials=number_of_successful_trials)
         self.last_trial = [None, None]
 
-    '''
-    def on_trans_9_lr2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
-        self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False,
-                                                             number_of_successful_trials=number_of_successful_trials)
-        self.task_fsm = self.initialisation.get_task_fsm()
-        self.last_trial = [None, None]
-    '''
-
     def on_trans_9_lr2pp(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         self.last_trial = [False, None]
         self.screen_fsm.step(action='blank')
@@ -163,11 +155,11 @@ class ExperimentFSM(StateMachine):
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
         self.task_fsm.step(poke, button)
 
-    def on_trans_12_pp2pp(self, poke, button, reward_on, reward_collected):
-        self.punish_time += 1
-
     def on_trans_11_f2pp(self, poke, button, reward_on, reward_collected):
         self.last_trial = [False, None]
+
+    def on_trans_12_pp2pp(self, poke, button, reward_on, reward_collected):
+        self.punish_time += 1
 
     def on_trans_13_pp2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=False,

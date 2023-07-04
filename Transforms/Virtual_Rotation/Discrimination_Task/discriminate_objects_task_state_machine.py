@@ -29,7 +29,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         # End State Variables
 
     def step(self, poke, button):
-        # print('== Starting WTM state = {}'.format(self.current_state.name))
+        print('== Starting DO state = {}'.format(self.current_state.name))
         if False:
             pass
 
@@ -66,7 +66,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
             elif not poke:
                 self.trans_6_f2ws(poke)
 
-        # print('== Ending state = {}'.format(self.current_state.name))
+        print('== Ending state = {}'.format(self.current_state.name))
         # End of Fail conditional
         # End conditionals
 
