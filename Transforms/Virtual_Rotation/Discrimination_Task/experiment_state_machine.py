@@ -42,6 +42,7 @@ class ExperimentFSM(StateMachine):
         self.last_trial = None
         self.punish_time = 0
         self.reward_on_command = False
+        self.trial_counts = [0, 0, 0]  # Total, Successful, Rewarded
         # End State Variables
 
     def step(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
@@ -122,9 +123,11 @@ class ExperimentFSM(StateMachine):
         self.task_fsm.step(poke, button)
 
     def on_trans_1_i2t(self, poke, button, reward_on, reward_collected):
+        self.trial_counts[0] = self.trial_counts[0] + 1
         self.task_fsm.step(poke, button)
 
     def on_trans_2_t2s(self, poke, button, reward_on, reward_collected):
+        self.trial_counts[1] = self.trial_counts[1] + 1
         self.task_fsm.step(poke, button)
 
     def on_trans_3_s2s(self, poke, button, reward_on, reward_collected):
@@ -143,10 +146,12 @@ class ExperimentFSM(StateMachine):
         self.last_trial = [True, False]
 
     def on_trans_8_gr2i(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
+        self.trial_counts[2] = self.trial_counts[2] + 1
         self.screen_fsm = self.initialisation.get_screen_fsm(previous_success=True,
                                                              number_of_successful_trials=number_of_successful_trials)
         self.task_fsm = self.initialisation.get_task_fsm(number_of_successful_trials=number_of_successful_trials)
         self.last_trial = [None, None]
+        print('{} Total, {} Successful, {} Rewarded'.format(*self.trial_counts))
 
     def on_trans_9_lr2pp(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         self.last_trial = [False, None]
@@ -166,5 +171,6 @@ class ExperimentFSM(StateMachine):
                                                              number_of_successful_trials=number_of_successful_trials)
         self.task_fsm = self.initialisation.get_task_fsm(number_of_successful_trials=number_of_successful_trials)
         self.last_trial = [None, None]
+        print('{} Total, {} Successful, {} Rewarded'.format(*self.trial_counts))
 
     # End transition callbacks
