@@ -55,7 +55,7 @@ class ScreenFSM(StateMachine):
         if self.catch_trial:
             # Set the reward_on_catch_trial to reward only 50% of the times (it is read in the worker script)
             self.reward_on_catch_trial = True if np.random.random() > 0.5 else False
-            print('CATCH TRIAL', self.reward_on_catch_trial)
+            print('CATCH TRIAL with reward: ', self.reward_on_catch_trial)
             # End State Variables
 
     def step(self, action):

@@ -6,7 +6,7 @@ import numpy as np
 
 
 class Initialisation:
-    def __init__(self, task_description='Wait', vert_or_hor='random', speed=20, speed_variability=0,
+    def __init__(self, task_description='Wait', vert_or_hor='random', speed=20, speed_variability=10,
                  angle_dif_between_man_and_target_trap=10,
                  time_to_target=0.5, punish_time=7, number_of_warmup_trials=30, catch_trials_percentage=0.15):
 
