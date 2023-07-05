@@ -29,7 +29,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         # End State Variables
 
     def step(self, poke, button):
-        print('== Starting DO state = {}'.format(self.current_state.name))
+        #print('== Starting DO state = {}'.format(self.current_state.name))
         if False:
             pass
 
@@ -53,20 +53,22 @@ class DiscriminateObjectsTaskFSM(StateMachine):
                     self.trans_3_p2suc(poke)
                 else:
                     self.trans_4_p2f(poke)
+            elif not poke:
+                self.trans_5_p2st(poke)
         # End of Wait_in_Poke conditional
         elif self.current_state == self.state_Success:
             if False:  # Success
                 pass  # Success
             elif not poke:
-                self.trans_5_s2ws(poke)
+                self.trans_6_s2ws(poke)
         # End of Success conditional
         elif self.current_state == self.state_Fail:
             if False:  # Fail
                 pass  # Fail
             elif not poke:
-                self.trans_6_f2ws(poke)
+                self.trans_7_f2ws(poke)
 
-        print('== Ending state = {}'.format(self.current_state.name))
+        #print('== Ending state = {}'.format(self.current_state.name))
         # End of Fail conditional
         # End conditionals
 

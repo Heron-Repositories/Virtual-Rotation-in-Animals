@@ -45,7 +45,7 @@ class ScreenFSM(StateMachine):
         self.command_to_screen = self.base_command_to_screen.format(*self.hide_objects)
 
     def step(self, action):
-        print("---- Starting SCREEN state = {}".format(self.current_state.name))
+        #print("---- Starting SCREEN state = {}".format(self.current_state.name))
         if False:
             pass
 
@@ -75,7 +75,7 @@ class ScreenFSM(StateMachine):
                 self.trans_6_c2c(action)
             elif action == 'blank':
                 self.trans_5_c2b(action)
-        print("---- Ending SCREEN state = {}".format(self.current_state.name))
+        #print("---- Ending SCREEN state = {}".format(self.current_state.name))
         # End of Show_Cue conditional
         # End conditionals
 

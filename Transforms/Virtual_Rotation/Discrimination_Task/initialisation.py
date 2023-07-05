@@ -37,8 +37,7 @@ class Initialisation:
 
         positions_and_rotations[type_of_line + 10] = np.random.randint(0, 90)
         positions_and_rotations[type_of_not_line + 10] = np.random.randint(0, 90)
-        #TODO Add the rotations
-        
+
         return positions_and_rotations
 
     def get_screen_fsm(self, previous_success, number_of_successful_trials):
