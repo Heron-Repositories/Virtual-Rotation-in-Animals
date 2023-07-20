@@ -26,7 +26,6 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         super().__init__()
         # Start State Variables
         self.screen_fsm = screen_fsm
-        # End State Variables
 
     def step(self, poke, button):
         #print('== Starting DO state = {}'.format(self.current_state.name))

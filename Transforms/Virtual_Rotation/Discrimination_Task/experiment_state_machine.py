@@ -1,6 +1,7 @@
 
 import numpy as np
 from statemachine import StateMachine, State
+import copy
 
 
 class ExperimentFSM(StateMachine):
@@ -43,11 +44,39 @@ class ExperimentFSM(StateMachine):
         self.punish_time = 0
         self.reward_on_command = False
         self.trial_counts = [0, 0, 0]  # Total, Successful, Rewarded
+
+        self.history = np.zeros(30)
+        self.gamma = 0.9
         # End State Variables
+
+    def update_history(self, last_result):
+        self.history[1:] = self.history[:-1] * self.gamma
+        self.history[0] = last_result
+
+    def update_side_probability(self, last_result):
+        if last_result != 0:
+            self.update_history(last_result)
+            if 0.9 >= self.initialisation.side_probability >= 0.1:
+                if self.history.mean() > 0.1:
+                    self.initialisation.side_probability -= 0.05
+                    if self.initialisation.side_probability < 0.1:
+                        self.initialisation.side_probability = 0.1
+                elif self.history.mean() < -0.1:
+                    self.initialisation.side_probability += 0.05
+                    if self.initialisation.side_probability > 0.9:
+                        self.initialisation.side_probability = 0.9
+                elif np.abs(self.history.mean()) < 0.08:
+                    if self.initialisation.side_probability < 0.4:
+                        self.initialisation.side_probability += 0.05
+                    if self.initialisation.side_probability > 0.6:
+                        self.initialisation.side_probability -= 0.05
+
+            print('Mean of past buttons: {}, Prob for right: {}'.format(self.history.mean(), self.initialisation.side_probability))
 
     def step(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
         #print('-------------------')
         #print("Starting EXP state = {}".format(self.current_state.name))
+        #print(button)
         if False:
             pass
 
@@ -121,6 +150,8 @@ class ExperimentFSM(StateMachine):
     # Start transition callbacks
     def on_trans_0_t2t(self, poke, button, reward_on, reward_collected):
         self.task_fsm.step(poke, button)
+        if button != 0:
+            self.update_side_probability(button)
 
     def on_trans_1_i2t(self, poke, button, reward_on, reward_collected):
         self.trial_counts[0] = self.trial_counts[0] + 1
@@ -158,6 +189,7 @@ class ExperimentFSM(StateMachine):
         self.screen_fsm.step(action='blank')
 
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
+        self.update_side_probability(button)
         self.task_fsm.step(poke, button)
 
     def on_trans_11_f2pp(self, poke, button, reward_on, reward_collected):
