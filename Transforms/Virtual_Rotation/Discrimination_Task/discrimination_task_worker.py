@@ -91,6 +91,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
         number_of_successful_trials = message[2]
         command_to_reward = np.array([ct.IGNORE])
 
+    button = None
     if 'Levers_State' in topic:
         poke = message[0]
         button = message[1]
@@ -108,12 +109,15 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     exp_state = str(experiment_fsm.current_state)
     task_state = str(experiment_fsm.task_fsm.current_state)
     screen_state = str(experiment_fsm.screen_fsm.current_state)
+    prob_for_right = str(trial_initialisation.side_probability)
 
     savenodestate_update_substate_df(exp_state=exp_state,
                                      task_state=task_state,
                                      screen_state=screen_state,
                                      command_to_screens=command_to_screen[0],
-                                     command_to_food_poke=command_to_reward[0])
+                                     command_to_food_poke=command_to_reward[0],
+                                     button=button,
+                                     prob_for_right=prob_for_right)
 
     result = [command_to_screen, command_to_reward]
     return result
