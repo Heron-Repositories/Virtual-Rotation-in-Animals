@@ -110,13 +110,14 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     task_state = str(experiment_fsm.task_fsm.current_state)
     screen_state = str(experiment_fsm.screen_fsm.current_state)
     prob_for_right = str(trial_initialisation.side_probability)
+    button_str = str(button)
 
     savenodestate_update_substate_df(exp_state=exp_state,
                                      task_state=task_state,
                                      screen_state=screen_state,
                                      command_to_screens=command_to_screen[0],
                                      command_to_food_poke=command_to_reward[0],
-                                     button=button,
+                                     button=button_str,
                                      prob_for_right=prob_for_right)
 
     result = [command_to_screen, command_to_reward]
