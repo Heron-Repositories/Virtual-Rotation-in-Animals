@@ -94,7 +94,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     button = None
     if 'Levers_State' in topic:
         poke = message[0]
-        button = message[1]
+        button = np.sign(message[1])
         command_to_reward = np.array([-1])
         #print('poke={}, button={}, reward_on={}, reward_collected={}'.
         #      format(message[0], message[1], reward_on, reward_collected))

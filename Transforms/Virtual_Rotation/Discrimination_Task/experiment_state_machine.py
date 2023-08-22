@@ -150,14 +150,14 @@ class ExperimentFSM(StateMachine):
     # Start transition callbacks
     def on_trans_0_t2t(self, poke, button, reward_on, reward_collected):
         self.task_fsm.step(poke, button)
-        if button != 0:
-            self.update_side_probability(button)
 
     def on_trans_1_i2t(self, poke, button, reward_on, reward_collected):
         self.trial_counts[0] = self.trial_counts[0] + 1
         self.task_fsm.step(poke, button)
 
     def on_trans_2_t2s(self, poke, button, reward_on, reward_collected):
+        if button != 0:
+            self.update_side_probability(button)
         self.trial_counts[1] = self.trial_counts[1] + 1
         self.task_fsm.step(poke, button)
 
@@ -189,7 +189,8 @@ class ExperimentFSM(StateMachine):
         self.screen_fsm.step(action='blank')
 
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
-        self.update_side_probability(button)
+        if button != 0:
+            self.update_side_probability(button)
         self.task_fsm.step(poke, button)
 
     def on_trans_11_f2pp(self, poke, button, reward_on, reward_collected):
