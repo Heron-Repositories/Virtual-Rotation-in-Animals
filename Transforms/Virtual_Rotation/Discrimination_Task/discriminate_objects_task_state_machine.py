@@ -26,6 +26,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         super().__init__()
         # Start State Variables
         self.screen_fsm = screen_fsm
+        self.buttons_off_timer = 0
 
     def step(self, poke, button):
         #print('== Starting DO state = {}'.format(self.current_state.name))
@@ -47,7 +48,10 @@ class DiscriminateObjectsTaskFSM(StateMachine):
             elif poke and not button:
                 self.trans_2_p2p(poke)
             elif poke and button:
-                if (button > 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] > 0)) or \
+                if self.buttons_off_timer < 6:
+                    self.buttons_off_timer = 0
+                    self.trans_2_p2p(poke)
+                elif (button > 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] > 0)) or \
                         (button < 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] < 0)):
                     self.trans_3_p2suc(poke)
                 else:
@@ -73,21 +77,27 @@ class DiscriminateObjectsTaskFSM(StateMachine):
 
     # Start transition callbacks
     def on_trans_0_st2st(self, poke):
+        self.buttons_off_timer = 0
         self.screen_fsm.step(action='blank')
 
     def on_trans_1_s2p(self, poke):
+        self.buttons_off_timer += 1
         self.screen_fsm.step(action='show_objects')
 
     def on_trans_2_p2p(self, poke):
+        self.buttons_off_timer += 1
         self.screen_fsm.step(action='show_objects')
 
     def on_trans_3_p2suc(self, poke):
-         self.screen_fsm.step(action='blank')
+        self.buttons_off_timer = 0
+        self.screen_fsm.step(action='blank')
 
     def on_trans_4_p2f(self, poke):
+        self.buttons_off_timer = 0
         self.screen_fsm.step(action='blank')
 
     def on_trans_5_p2st(self, poke):
+        self.buttons_off_timer = 0
         self.screen_fsm.step(action='blank')
 
     def on_trans_6_s2ws(self, poke):
