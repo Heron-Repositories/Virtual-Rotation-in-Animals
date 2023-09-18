@@ -47,7 +47,6 @@ class DiscriminateObjectsTaskFSM(StateMachine):
             if False:  # Wait_in_Poke
                 pass  # Wait_in_Poke
             elif poke and not button:
-                print('Timer {}'.format(self.buttons_off_timer))
                 self.trans_2_p2p(poke)
             elif poke and button:
                 if self.buttons_off_timer < 6:
