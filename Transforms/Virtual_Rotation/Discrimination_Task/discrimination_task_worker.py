@@ -32,6 +32,7 @@ number_of_pellets: int
 reward_on = False
 reward_collected = False
 number_of_successful_trials = 0
+lever_press_times = [0, 0]
 
 
 def initialise(_worker_object):
@@ -73,6 +74,7 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     global reward_on
     global reward_collected
     global number_of_successful_trials
+    global lever_press_times
 
     try:
         vis.visualisation_on = parameters[0]
@@ -94,7 +96,12 @@ def work_function(data, parameters, savenodestate_update_substate_df):
     button = None
     if 'Levers_State' in topic:
         poke = message[0]
-        button = np.sign(message[1])
+        lever_press_times[0] = message[1]
+        if lever_press_times[0] == lever_press_times[1] or lever_press_times[0] == 0:
+            button = 0
+        else:
+            button = np.sign(message[1])
+        lever_press_times[1] = lever_press_times[0]
         command_to_reward = np.array([-1])
         #print('poke={}, button={}, reward_on={}, reward_collected={}'.
         #      format(message[0], message[1], reward_on, reward_collected))

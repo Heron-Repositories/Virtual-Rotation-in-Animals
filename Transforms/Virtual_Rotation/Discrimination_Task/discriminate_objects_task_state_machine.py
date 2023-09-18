@@ -30,6 +30,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
 
     def step(self, poke, button):
         #print('== Starting DO state = {}'.format(self.current_state.name))
+        #print('Button {}'.format(button))
         if False:
             pass
 
@@ -46,13 +47,14 @@ class DiscriminateObjectsTaskFSM(StateMachine):
             if False:  # Wait_in_Poke
                 pass  # Wait_in_Poke
             elif poke and not button:
+                print('Timer {}'.format(self.buttons_off_timer))
                 self.trans_2_p2p(poke)
             elif poke and button:
                 if self.buttons_off_timer < 6:
                     self.buttons_off_timer = 0
                     self.trans_2_p2p(poke)
-                elif (button > 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] > 0)) or \
-                        (button < 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] < 0)):
+                elif self.buttons_off_timer >= 6 and ((button > 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] > 0)) or \
+                        (button < 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] < 0))):
                     self.trans_3_p2suc(poke)
                 else:
                     self.trans_4_p2f(poke)

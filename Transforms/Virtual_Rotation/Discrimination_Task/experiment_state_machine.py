@@ -74,8 +74,8 @@ class ExperimentFSM(StateMachine):
             print('Mean of past buttons: {}, Prob for right: {}'.format(self.history.mean(), self.initialisation.side_probability))
 
     def step(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
-        #print('-------------------')
-        #print("Starting EXP state = {}".format(self.current_state.name))
+       # print('-------------------')
+       # print("Starting EXP state = {}".format(self.current_state.name))
         #print(button)
         if False:
             pass
