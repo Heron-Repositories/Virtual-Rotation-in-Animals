@@ -28,6 +28,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         self.screen_fsm = screen_fsm
         self.buttons_off_timer = 0
         self.buttons_off_time = 3
+        self.last_button_result = 0
 
     def step(self, poke, button):
         #print('== Starting DO state = {}'.format(self.current_state.name))
@@ -57,8 +58,10 @@ class DiscriminateObjectsTaskFSM(StateMachine):
                         and ((button > 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] > 0)) or
                              (button < 0 and np.any(self.screen_fsm.show_objects_at_positions[1:4] < 0))):
                     self.trans_3_p2suc(poke)
+                    self.last_button_result = button
                 else:
                     self.trans_4_p2f(poke)
+                    self.last_button_result = button
             elif not poke:
                 self.trans_5_p2st(poke)
         # End of Wait_in_Poke conditional

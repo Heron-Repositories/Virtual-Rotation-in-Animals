@@ -156,8 +156,8 @@ class ExperimentFSM(StateMachine):
         self.task_fsm.step(poke, button)
 
     def on_trans_2_t2s(self, poke, button, reward_on, reward_collected):
-        #if button != 0:
-        self.update_side_probability(button)
+        if self.task_fsm.last_button_result != 0:
+            self.update_side_probability(self.task_fsm.last_button_result)
         self.trial_counts[1] = self.trial_counts[1] + 1
         self.task_fsm.step(poke, button)
 
@@ -189,8 +189,8 @@ class ExperimentFSM(StateMachine):
         self.screen_fsm.step(action='blank')
 
     def on_trans_10_t2f(self, poke, button, reward_on, reward_collected):
-        #if button != 0:
-        self.update_side_probability(button)
+        if self.task_fsm.last_button_result != 0:
+            self.update_side_probability(self.task_fsm.last_button_result)
         self.task_fsm.step(poke, button)
 
     def on_trans_11_f2pp(self, poke, button, reward_on, reward_collected):
