@@ -30,7 +30,7 @@ class Initialisation:
 
         type_of_line = np.argmax(np.random.random(3)*possibilities[1:4]) + 1
         type_of_not_line = np.argmax(np.random.random(6) * possibilities[4:]) + 4
-        line_position = 400 * np.sign(np.random.binomial(n=1, p=self.side_probability) - 0.2)
+        line_position = 350 * np.sign(np.random.binomial(n=1, p=self.side_probability) - 0.2)
         other_position = - line_position
 
         positions_and_rotations = np.zeros(20)
