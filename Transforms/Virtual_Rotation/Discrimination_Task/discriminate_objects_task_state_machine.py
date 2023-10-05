@@ -27,7 +27,7 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         # Start State Variables
         self.screen_fsm = screen_fsm
         self.buttons_off_timer = 0
-        self.buttons_off_time = 3
+        self.buttons_off_time = 5
         self.last_button_result = 0
 
     def step(self, poke, button):
