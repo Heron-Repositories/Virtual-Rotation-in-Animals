@@ -37,8 +37,17 @@ class Initialisation:
         positions_and_rotations[type_of_line] = line_position
         positions_and_rotations[type_of_not_line] = other_position
 
-        positions_and_rotations[type_of_line + 10] = np.random.randint(0, 90)
-        positions_and_rotations[type_of_not_line + 10] = np.random.randint(0, 90)
+        # Full random rotation
+        #positions_and_rotations[type_of_line + 10] = np.random.randint(0, 90)
+        #positions_and_rotations[type_of_not_line + 10] = np.random.randint(0, 90)
+
+        # 0 and 90 degrees rotation
+        #positions_and_rotations[type_of_line + 10] = np.random.binomial(1, 0.5, 1)[0] * 90
+        #positions_and_rotations[type_of_not_line + 10] = np.random.binomial(1, 0.5, 1)[0] * 90
+
+        # No rotation
+        positions_and_rotations[type_of_line + 10] = 0
+        positions_and_rotations[type_of_not_line + 10] = 0
 
         return positions_and_rotations
 
