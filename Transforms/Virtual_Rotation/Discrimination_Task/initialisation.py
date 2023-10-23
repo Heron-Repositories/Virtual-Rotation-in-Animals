@@ -46,8 +46,8 @@ class Initialisation:
         #positions_and_rotations[type_of_not_line + 10] = np.random.binomial(1, 0.5, 1)[0] * 90
 
         # No rotation
-        positions_and_rotations[type_of_line + 10] = 0
-        positions_and_rotations[type_of_not_line + 10] = 0
+        positions_and_rotations[type_of_line + 10] = 90
+        positions_and_rotations[type_of_not_line + 10] = 90
 
         return positions_and_rotations
 
