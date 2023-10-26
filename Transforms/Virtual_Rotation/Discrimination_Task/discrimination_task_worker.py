@@ -61,7 +61,7 @@ def initialise(_worker_object):
     _worker_object.num_of_iters_to_update_savenodestate_substate = 1800
 
     trial_initialisation = init.Initialisation(objects_types=objects_types,
-                                               punish_time=7)
+                                               punish_time=10)
 
     experiment_fsm = ExperimentFSM(initialisation=trial_initialisation)
     return True
