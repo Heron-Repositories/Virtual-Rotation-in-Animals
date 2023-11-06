@@ -74,8 +74,8 @@ class ExperimentFSM(StateMachine):
             print('Mean of past buttons: {}, Prob for right: {}'.format(self.history.mean(), self.initialisation.side_probability))
 
     def step(self, poke, button, reward_on, reward_collected, number_of_successful_trials):
-       # print('-------------------')
-       # print("Starting EXP state = {}".format(self.current_state.name))
+        #print('-------------------')
+        #print("Starting EXP state = {}".format(self.current_state.name))
         #print(button)
         if False:
             pass
@@ -162,10 +162,11 @@ class ExperimentFSM(StateMachine):
         self.task_fsm.step(poke, button)
 
     def on_trans_3_s2s(self, poke, button, reward_on, reward_collected):
-        pass
+        self.task_fsm.step(poke, button)
 
     def on_trans_4_s2rp(self, poke, button, reward_on, reward_collected):
         self.last_trial = [True, None]
+        self.task_fsm.step(poke, button)
 
     def on_trans_5_rp2rp(self, poke, button, reward_on, reward_collected):
         pass
@@ -195,6 +196,7 @@ class ExperimentFSM(StateMachine):
 
     def on_trans_11_f2pp(self, poke, button, reward_on, reward_collected):
         self.last_trial = [False, None]
+        self.task_fsm.step(poke, button)
 
     def on_trans_12_pp2pp(self, poke, button, reward_on, reward_collected):
         self.punish_time += 1

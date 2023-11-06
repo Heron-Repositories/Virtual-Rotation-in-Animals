@@ -68,13 +68,13 @@ class DiscriminateObjectsTaskFSM(StateMachine):
         elif self.current_state == self.state_Success:
             if False:  # Success
                 pass  # Success
-            elif not poke:
+            elif poke:
                 self.trans_6_s2ws(poke)
         # End of Success conditional
         elif self.current_state == self.state_Fail:
             if False:  # Fail
                 pass  # Fail
-            elif not poke:
+            elif poke:
                 self.trans_7_f2ws(poke)
 
         #print('== Ending state = {}'.format(self.current_state.name))
@@ -96,20 +96,20 @@ class DiscriminateObjectsTaskFSM(StateMachine):
 
     def on_trans_3_p2suc(self, poke):
         self.buttons_off_timer = 0
-        self.screen_fsm.step(action='blank')
+        self.screen_fsm.step(action='show_success_cue')
 
     def on_trans_4_p2f(self, poke):
         self.buttons_off_timer = 0
-        self.screen_fsm.step(action='blank')
+        self.screen_fsm.step(action='show_failure_cue')
 
     def on_trans_5_p2st(self, poke):
         self.buttons_off_timer = 0
         self.screen_fsm.step(action='blank')
 
     def on_trans_6_s2ws(self, poke):
-        self.screen_fsm.step(action='blank')
+        self.screen_fsm.step(action='show_success_cue')
 
     def on_trans_7_f2ws(self, poke):
-        self.screen_fsm.step(action='blank')
+        self.screen_fsm.step(action='show_failure_cue')
 
     # End transition callbacks
